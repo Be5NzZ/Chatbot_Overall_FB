@@ -68,7 +68,7 @@ if(!is_null($events)){
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
                             'Message Template',// ข้อความแสดงในปุ่ม
-                            'This is Text' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'Hi' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),      
                     );
                     $imageUrl = 'https://www.mywebsite.com/imgsrc/photos/w/simpleflower';
