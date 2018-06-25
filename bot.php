@@ -71,7 +71,7 @@ if(!is_null($events)){
                             'Hi' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),      
                     );
-                    $imageUrl = 'http://seeingdogs.org.uk/wp-content/uploads/2015/12/golden-dog.jpg';
+                    $imageUrl = 'https://github.com/yyingz/NewChatBot/blob/master/dog.jpg';
                     $replyData = new TemplateMessageBuilder('Button Template',
                         new ButtonTemplateBuilder(
                                 'button template builder', // กำหนดหัวเรื่อง
