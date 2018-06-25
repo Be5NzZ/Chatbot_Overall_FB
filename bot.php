@@ -71,7 +71,7 @@ if(!is_null($events)){
                             'Hi' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),      
                     );
-                    $imageUrl = 'https://github.com/yyingz/NewChatBot/blob/master/dog.jpg';
+                    $imageUrl = 'http://chatbotfortat.herokuapp.com/dog.jpg';
                     $replyData = new TemplateMessageBuilder('Button Template',
                         new ButtonTemplateBuilder(
                                 'button template builder', // กำหนดหัวเรื่อง
