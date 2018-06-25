@@ -80,13 +80,17 @@ if(!is_null($events)){
                                 $actionBuilder  // กำหนด action object
                         )
                     );              
-                break;                                        
+                break;
+                default:
+                    $textReplyMessage = "Test TEst";
+                    $replyData = new TextMessageBuilder($textReplyMessage);
+                    break;                                          
             }
             break;
-        default:
-            $textReplyMessage = "Test TEst";
-            $replyData = new TextMessageBuilder($textReplyMessage);
-            break;  
+        // default:
+        //     $textReplyMessage = "Test TEst";
+        //     $replyData = new TextMessageBuilder($textReplyMessage);
+        //     break;  
     }
 }
 //l ส่วนของคำสั่งตอบกลับข้อความ
