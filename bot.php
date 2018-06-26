@@ -77,6 +77,10 @@ if(!is_null($events)){
                         new MessageTemplateActionBuilder(
                             'รูปน้องหมา',// ข้อความแสดงในปุ่ม
                             'รูป' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),
+                        new MessageTemplateActionBuilder(
+                            'Video',// ข้อความแสดงในปุ่ม
+                            'Video' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),  
                     );
                     $imageUrl = 'https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg';
@@ -94,6 +98,11 @@ if(!is_null($events)){
 (66)2 266 9940
  nostrahotline@cdg.co.th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
+                    break;
+                case (strstr($userMessage, "Video")):
+                    $picThumbnail = 'https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.th.jpg';
+                    $videoUrl = "https://www.youtube.com/watch?v=_GYak5psQXs";                
+                    $replyData = new VideoMessageBuilder($videoUrl,$picThumbnail);
                     break;
                 case (strstr($userMessage, "รูป")):
                     $picFullSize = 'https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg';
