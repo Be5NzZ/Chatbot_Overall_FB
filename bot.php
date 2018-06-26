@@ -94,7 +94,7 @@ if(!is_null($events)){
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
-                case (strstr($userMessage, "กิน")):
+                case (strstr($userMessage, "ที่ตั้ง")):
                     $placeName = "GlobeTech";
                     $placeAddress = "92/44 ชั้น 16 อาคารสาธรธานี 2 ถนนสาทรเหนือ แขวงสีลม เขตบางรัก กรุงเทพฯ 10500";
                     $latitude = 13.723475;
