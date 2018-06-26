@@ -97,20 +97,6 @@ if(!is_null($events)){
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
-              default:
-                   $textReplyMessage = "พิมพ์ให้ถูกซิ!!!";
-                           $textMessage = new TextMessageBuilder($textReplyMessage);
-
-                           $stickerID = 22;
-                           $packageID = 2;
-                           $StickerMessage = new StickerMessageBuilder($packageID,$stickerID);
-
-                           $multiMessage =     new MultiMessageBuilder;
-                           $multiMessage->add($textMessage);
-                           $multiMessage->add($StickerMessage);
-
-                           $replyData = $multiMessage; 
-                   break;
             }
             break;
 //         default:
