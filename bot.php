@@ -63,21 +63,21 @@ if(!is_null($events)){
     switch ($typeMessage){
         case 'text':
             switch ($userMessage) {
-                case (strstr($userMessage, "สนใจ")):
+                case (strstr($userMessage, "ติดต่อ") OR strstr($userMessage, "สอบถาม")):
                     // กำหนด action 4 ปุ่ม 4 ประเภท
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
                             'ไปเที่ยวกัน',// ข้อความแสดงในปุ่ม
-                            'แนะนำที่เที่ยวหน่อยยย' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'เที่ยวไหนดี' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),
                         new MessageTemplateActionBuilder(
                             'หาไรกินกันไหม',// ข้อความแสดงในปุ่ม
-                            'กินไรดี' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'แนะนำร้านหร่อยๆ หน่อย' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),
-                        new UriTemplateActionBuilder(
-                           'ดูหนังดีกว่า', // ข้อความแสดงในปุ่ม
-                           'https://www.sfcinemacity.com/movies'
-                       ),   
+                        new MessageTemplateActionBuilder(
+                            'ไปพักผ่อนกันดีกว่า',// ข้อความแสดงในปุ่ม
+                            'ไหนๆ มีที่ไหนน่าไปเที่ยวบ้าง' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),        
                     );
                     $imageUrl = 'https://www.img.in.th/image/rkLse3';
                     $replyData = new TemplateMessageBuilder('Button Template',
@@ -89,21 +89,16 @@ if(!is_null($events)){
                         )
                     );              
                 break;
-              case (strstr($userMessage, "เที่ยว")):
-                    $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
+                default:
+                    $textReplyMessage = "Test TEst";
                     $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;
-              case (strstr($userMessage, "กิน")):
-                    $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
-                    $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;
-               default:
-                    $textReplyMessage = "....";
-                    $textMessage = new TextMessageBuilder($textReplyMessage);
-                    break;  
+                    break;                                          
             }
             break;
-      
+        // default:
+        //     $textReplyMessage = "Test TEst";
+        //     $replyData = new TextMessageBuilder($textReplyMessage);
+        //     break;  
     }
 }
 //l ส่วนของคำสั่งตอบกลับข้อความ
