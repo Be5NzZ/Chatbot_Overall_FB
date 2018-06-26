@@ -63,7 +63,7 @@ if(!is_null($events)){
     switch ($typeMessage){
         case 'text':
             switch ($userMessage) {
-                case (strstr($userMessage, "ติดต่อ") OR strstr($userMessage, "สอบถาม")):
+                case (strstr($userMessage, "น่าสนใจ")):
                     // กำหนด action 4 ปุ่ม 4 ประเภท
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
@@ -72,11 +72,7 @@ if(!is_null($events)){
                         ),
                         new MessageTemplateActionBuilder(
                             'หาไรกินกันไหม',// ข้อความแสดงในปุ่ม
-                            'แนะนำร้านหร่อยๆ หน่อย' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                        ),
-                        new MessageTemplateActionBuilder(
-                            'ไปพักผ่อนกันดีกว่า',// ข้อความแสดงในปุ่ม
-                            'ไหนๆ มีที่ไหนน่าไปเที่ยวบ้าง' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'กินไรดี' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),        
                     );
                     $imageUrl = 'https://www.img.in.th/image/rkLse3';
@@ -89,6 +85,14 @@ if(!is_null($events)){
                         )
                     );              
                 break;
+                case (strstr($userMessage, "เที่ยว")):
+                    $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
+                    $replyData = new TextMessageBuilder($textReplyMessage);
+                    break;
+                case (strstr($userMessage, "กิน")):
+                    $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
+                    $replyData = new TextMessageBuilder($textReplyMessage);
+                    break; 
                 default:
                     $textReplyMessage = "Test TEst";
                     $replyData = new TextMessageBuilder($textReplyMessage);
