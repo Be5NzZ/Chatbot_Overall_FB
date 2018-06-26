@@ -75,8 +75,8 @@ if(!is_null($events)){
                             'แนะนำร้านหร่อยๆ หน่อย' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),
                         new MessageTemplateActionBuilder(
-                            'ไปพักผ่อนกันดีกว่า',// ข้อความแสดงในปุ่ม
-                            'ไหนๆ มีที่ไหนน่าไปเที่ยวบ้าง' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'ดูหนังป่าววว',// ข้อความแสดงในปุ่ม
+                            'ช่วงนี้มีหนังอะไรบ้าง' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),        
                     );
                     $imageUrl = 'https://www.img.in.th/image/rkLse3';
@@ -91,6 +91,14 @@ if(!is_null($events)){
                 break;
               case (strstr($userMessage, "เที่ยว")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
+                    $replyData = new TextMessageBuilder($textReplyMessage);
+                    break;
+              case (strstr($userMessage, "หร่อย")):
+                    $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
+                    $replyData = new TextMessageBuilder($textReplyMessage);
+                    break;
+              case (strstr($userMessage, "หนัง")):
+                    $textReplyMessage = "https://www.sfcinemacity.com/showtime/cinema/9924";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
                 default:
