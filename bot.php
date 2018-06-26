@@ -84,7 +84,7 @@ if(!is_null($events)){
                                 $actionBuilder  // กำหนด action object
                         )
                     );              
-                break;
+                    break;
                 case (strstr($userMessage, "เที่ยว")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
@@ -93,7 +93,7 @@ if(!is_null($events)){
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break; 
-                default:
+               default:
                     $textReplyMessage = "Test TEst";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;                                          
