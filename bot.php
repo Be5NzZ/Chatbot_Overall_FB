@@ -63,7 +63,7 @@ if(!is_null($events)){
     switch ($typeMessage){
         case 'text':
             switch ($userMessage) {
-                case (strstr($userMessage, "น่าสนใจ") OR strstr($userMessage, "content") OR strstr($userMessage, "แนะนำ"):
+                case (strstr($userMessage, "น่าสนใจ") OR strstr($userMessage, "แนะนำ")):
                     // กำหนด action 4 ปุ่ม 4 ประเภท
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
@@ -75,8 +75,8 @@ if(!is_null($events)){
                             'แนะนำร้านหร่อยๆ หน่อย' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),
                         new MessageTemplateActionBuilder(
-                            'ดูหนังป่าววว',// ข้อความแสดงในปุ่ม
-                            'มีหนังเรื่องไหนบ้างช่วงนี้' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                            'ไปพักผ่อนกันดีกว่า',// ข้อความแสดงในปุ่ม
+                            'ไหนๆ มีที่ไหนน่าไปเที่ยวบ้าง' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),        
                     );
                     $imageUrl = 'https://www.img.in.th/image/rkLse3';
@@ -89,16 +89,16 @@ if(!is_null($events)){
                         )
                     );              
                 break;
-                case (strstr($userMessage, "เที่ยว") OR strstr($userMessage, "พักผ่อน")):
-                    $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
-                    $replyData = new TextMessageBuilder($textReplyMessage);              
-                break;
                 default:
-                    $textReplyMessage = "พิมพ์ให้ถูกซิ!!!";
+                    $textReplyMessage = "Test TEst";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;                                          
             }
             break;
+        // default:
+        //     $textReplyMessage = "Test TEst";
+        //     $replyData = new TextMessageBuilder($textReplyMessage);
+        //     break;  
     }
 }
 //l ส่วนของคำสั่งตอบกลับข้อความ
