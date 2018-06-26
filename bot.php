@@ -72,12 +72,8 @@ if(!is_null($events)){
                         ),
                         new MessageTemplateActionBuilder(
                             'หาไรกินกันไหม',// ข้อความแสดงในปุ่ม
-                            'แนะนำร้านหร่อยๆ หน่อย' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                        ),
-                        new MessageTemplateActionBuilder(
-                            'ไปพักผ่อนกันดีกว่า',// ข้อความแสดงในปุ่ม
-                            'ไหนๆ มีที่ไหนน่าไปเที่ยวบ้าง' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                        ),        
+                            'แนะนำร้านอาหารที' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),     
                     );
                     $imageUrl = 'https://www.img.in.th/image/rkLse3';
                     $replyData = new TemplateMessageBuilder('Button Template',
@@ -115,7 +111,7 @@ if(!is_null($events)){
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
-                case (strstr($userMessage, "กิน")):
+                case (strstr($userMessage, "อาหาร")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;                                        
