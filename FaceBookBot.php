@@ -1,7 +1,7 @@
 <?php
 // parameters
 $hubVerifyToken = 'tk_nom_sod';
-$accessToken = "EAAbHInA6V4kBANgqRCJ1BRjCaxeyP5uAnlHEz6nYldhff1y3XVGZCtasqq4ClnyVkGZBoBySxGb6N2vHg4x3ZC6whs2RPEno8wDYPpI7WnKZCqzuezPfJGJk88ZBvCIgozE9mKOpBcKJCES72C1arfbpZCZArxCBHQx1NGfT2NpVPVw21deKlRO";
+$accessToken = "EAAbHInA6V4kBANAZCPWtdl020HcGVNlZBZAHSddhfYQmcapPNdIZCmcIZAbH0rQqon8nyuZCWR2eKRieyA3w5Syn9n97pPKyZCgrLXefPPCZB4G43LEW3XDYupu2iyMkfpgVq9pZATRBRxA5CH71e0IKpQSdZA9o6CZAq0ymYizzkwDo2i2nH3ckFTL";
 // check token at setup
 if ($_REQUEST['hub_verify_token'] === $hubVerifyToken) {
   echo $_REQUEST['hub_challenge'];
