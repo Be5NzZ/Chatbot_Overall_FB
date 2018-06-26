@@ -74,10 +74,10 @@ if(!is_null($events)){
                             'หาไรกินกันไหม',// ข้อความแสดงในปุ่ม
                             'กินไรดี' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
                         ),
-                        new MessageTemplateActionBuilder(
-                            'ดูหนังป่าววว',// ข้อความแสดงในปุ่ม
-                            'ช่วงนี้มีหนังอะไรบ้าง' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                        ),        
+                        new UriTemplateActionBuilder(
+                           'ดูหนังดีกว่า', // ข้อความแสดงในปุ่ม
+                           'https://www.sfcinemacity.com/movies'
+                       ),   
                     );
                     $imageUrl = 'https://www.img.in.th/image/rkLse3';
                     $replyData = new TemplateMessageBuilder('Button Template',
@@ -96,15 +96,7 @@ if(!is_null($events)){
               case (strstr($userMessage, "กิน")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;
-              case (strstr($userMessage, "หนัง")):
-                    $textReplyMessage = "https://www.sfcinemacity.com/showtime/cinema/9924";
-                    $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;
-//                 default:
-//                     $textReplyMessage = "Test TEst";
-//                     $replyData = new TextMessageBuilder($textReplyMessage);
-//                     break;                                          
+                    break;                                       
             }
             break;
         default:
