@@ -86,7 +86,9 @@ if(!is_null($events)){
                     );              
                 break;
                 case (strstr($userMessage, "Contact")):
-                    $textReplyMessage = "(66)2 266 9940";
+                    $textReplyMessage = "NOSTRA Hotline Service
+(66)2 266 9940
+ nostrahotline@cdg.co.th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;                
                 case (strstr($userMessage, "เที่ยว")):
