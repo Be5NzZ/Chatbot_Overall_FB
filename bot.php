@@ -89,6 +89,10 @@ if(!is_null($events)){
                         )
                     );              
                 break;
+              case (strstr($userMessage, "เที่ยว")):
+                    $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
+                    $replyData = new TextMessageBuilder($textReplyMessage);
+                    break;
                 default:
                     $textReplyMessage = "Test TEst";
                     $replyData = new TextMessageBuilder($textReplyMessage);
