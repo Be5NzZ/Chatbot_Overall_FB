@@ -21,37 +21,34 @@
       'recipient' => [ 'id' => $senderId ],
       'message' => [ 'text' => $answer ]
   ];
-  if($messageText == "blog"){
-     $answer = ["attachment"=>[
-      "type"=>"template",
-      "payload"=>[
-        "template_type"=>"generic",
-        "elements"=>[
-          [
-            "title"=>"Welcome to Peter\'s Hats",
-            "item_url"=>"https://www.cloudways.com/blog/migrate-symfony-from-cpanel-to-cloud-hosting/",
-            "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
-            "subtitle"=>"We\'ve got the right hat for everyone.",
-            "buttons"=>[
-              [
-                "type"=>"web_url",
-                "url"=>"https://petersfancybrownhats.com",
-                "title"=>"View Website"
-              ],
-              [
-                "type"=>"postback",
-                "title"=>"Start Chatting",
-                "payload"=>"DEVELOPER_DEFINED_PAYLOAD"
-              ]              
+  if($messageText == "more") {  
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "image_url"=> "https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg",
+          "text"=>"NOSTRA Map",
+          "buttons"=>[
+            [
+              "type"=>"web_url",
+              "url"=>"http://www.nostramap.com/",
+              "title"=>"Website"
+            ],
+            [
+              "type"=>"web_url",
+              "url"=>"http://map.nostramap.com",
+              "title"=>"Show Case"
             ]
           ]
         ]
-      ]
-    ]];
-     $response = [
-    'recipient' => [ 'id' => $senderId ],
-    'message' => $answer 
-  ];}
+        ]];
+        $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+  ];
+  }
+
+
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
   curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($response));
