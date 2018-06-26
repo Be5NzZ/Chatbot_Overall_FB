@@ -95,10 +95,10 @@ if(!is_null($events)){
                     break;                                        
             }
             break;
-        // default:
-        //     $textReplyMessage = "Test TEst";
-        //     $replyData = new TextMessageBuilder($textReplyMessage);
-        //     break;  
+        default:
+            $textReplyMessage = "Test TEst";
+            $replyData = new TextMessageBuilder($textReplyMessage);
+            break;  
     }
 }
 //l ส่วนของคำสั่งตอบกลับข้อความ
