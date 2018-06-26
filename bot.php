@@ -93,7 +93,7 @@ if(!is_null($events)){
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
-              case (strstr($userMessage, "หร่อย")):
+              case (strstr($userMessage, "กิน")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
@@ -101,16 +101,16 @@ if(!is_null($events)){
                     $textReplyMessage = "https://www.sfcinemacity.com/showtime/cinema/9924";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
-                default:
-                    $textReplyMessage = "Test TEst";
-                    $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;                                          
+//                 default:
+//                     $textReplyMessage = "Test TEst";
+//                     $replyData = new TextMessageBuilder($textReplyMessage);
+//                     break;                                          
             }
             break;
-        // default:
-        //     $textReplyMessage = "Test TEst";
-        //     $replyData = new TextMessageBuilder($textReplyMessage);
-        //     break;  
+        default:
+            $textReplyMessage = "Test TEst";
+            $replyData = new TextMessageBuilder($textReplyMessage);
+            break;  
     }
 }
 //l ส่วนของคำสั่งตอบกลับข้อความ
