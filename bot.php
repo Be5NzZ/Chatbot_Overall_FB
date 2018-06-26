@@ -93,7 +93,31 @@ if(!is_null($events)){
                 case (strstr($userMessage, "กิน")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;                                        
+                    break;
+                case (strstr($userMessage, "กิน")):
+                    $placeName = "GlobeTech";
+                    $placeAddress = "92/44 ชั้น 16 อาคารสาธรธานี 2 ถนนสาทรเหนือ แขวงสีลม เขตบางรัก กรุงเทพฯ 10500";
+                    $latitude = 13.723475;
+                    $longitude = 100.530398;
+                    $replyData = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);  
+                    break;
+                case (strstr($userMessage, "ติดต่อ")):
+                  $textReplyMessage = "ติดต่อ บริษัท โกลบเทค จำกัด
+                                       92/44 ชั้น 16 อาคารสาธรธานี 2 
+                                       ถนนสาทรเหนือ แขวงสีลม เขตบางรัก กรุงเทพฯ 10500
+                                       NOSTRA Hotline Service
+                                       (66)2 266 9940
+                                       nostrahotline@cdg.co.th";
+                  $textMessage = new TextMessageBuilder($textReplyMessage);
+
+                  $picFullSize = 'http://www.nostramap.com/wp-content/themes/nostra/images/logo.jpg';
+                  $imageMessage = new ImageMessageBuilder($picFullSize);
+              
+                  $multiMessage =     new MultiMessageBuilder;
+                  $multiMessage->add($textMessage);
+                  $multiMessage->add($imageMessage);
+                  $replyData = $multiMessage;                                     
+                  break;       
             }
             break;
         default:
