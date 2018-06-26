@@ -63,6 +63,32 @@ if(!is_null($events)){
     switch ($typeMessage){
         case 'text':
             switch ($userMessage) {
+                case (strstr($userMessage, "ติดต่อ") OR strstr($userMessage, "สอบถาม")):
+                    // กำหนด action 4 ปุ่ม 4 ประเภท
+                    $actionBuilder = array(
+                        new MessageTemplateActionBuilder(
+                            'ไปเที่ยวกัน',// ข้อความแสดงในปุ่ม
+                            'เที่ยวไหนดี' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),
+                        new MessageTemplateActionBuilder(
+                            'หาไรกินกันไหม',// ข้อความแสดงในปุ่ม
+                            'แนะนำร้านหร่อยๆ หน่อย' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),
+                        new MessageTemplateActionBuilder(
+                            'ไปพักผ่อนกันดีกว่า',// ข้อความแสดงในปุ่ม
+                            'ไหนๆ มีที่ไหนน่าไปเที่ยวบ้าง' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),        
+                    );
+                    $imageUrl = 'https://www.img.in.th/image/rkLse3';
+                    $replyData = new TemplateMessageBuilder('Button Template',
+                        new ButtonTemplateBuilder(
+                                'button template builder', // กำหนดหัวเรื่อง
+                                'Please select', // กำหนดรายละเอียด
+                                $imageUrl, // กำหนด url รุปภาพ
+                                $actionBuilder  // กำหนด action object
+                        )
+                    );              
+                break;
                 case (strstr($userMessage, "สนใจ")):
                     // กำหนด action 4 ปุ่ม 4 ประเภท
                     $actionBuilder = array(
