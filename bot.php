@@ -85,7 +85,10 @@ if(!is_null($events)){
                         )
                     );              
                 break;
-                
+                case (strstr($userMessage, "Contact")):
+                    $textReplyMessage = "(66)2 266 9940";
+                    $replyData = new TextMessageBuilder($textReplyMessage);
+                    break;                
                 case (strstr($userMessage, "เที่ยว")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
@@ -101,10 +104,6 @@ if(!is_null($events)){
                     $longitude = 100.530398;
                     $replyData = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);  
                     break;
-                case (strstr($userMessage, "ติดต่อ")):
-                    $textReplyMessage = "(66)2 266 9940 nostrahotline@cdg.co.th";
-                    $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;   
             }
             break;
         default:
