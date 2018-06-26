@@ -102,21 +102,12 @@ if(!is_null($events)){
                     $replyData = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);  
                     break;
                 case (strstr($userMessage, "ติดต่อ")):
-                  $textReplyMessage = "ติดต่อ บริษัท โกลบเทค จำกัด
-                                       92/44 ชั้น 16 อาคารสาธรธานี 2 
+                  $textReplyMessage = "92/44 ชั้น 16 อาคารสาธรธานี 2 
                                        ถนนสาทรเหนือ แขวงสีลม เขตบางรัก กรุงเทพฯ 10500
                                        NOSTRA Hotline Service
                                        (66)2 266 9940
                                        nostrahotline@cdg.co.th";
-                  $textMessage = new TextMessageBuilder($textReplyMessage);
-
-                  $picFullSize = 'http://www.nostramap.com/wp-content/themes/nostra/images/logo.jpg';
-                  $imageMessage = new ImageMessageBuilder($picFullSize);
-              
-                  $multiMessage =     new MultiMessageBuilder;
-                  $multiMessage->add($textMessage);
-                  $multiMessage->add($imageMessage);
-                  $replyData = $multiMessage;                                     
+                  $replyData = new TextMessageBuilder($textReplyMessage);                                  
                   break;       
             }
             break;
