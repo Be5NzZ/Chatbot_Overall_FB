@@ -87,7 +87,7 @@ if(!is_null($events)){
                     $replyData = new TemplateMessageBuilder('Button Template',
                         new ButtonTemplateBuilder(
                                 'Content', // กำหนดหัวเรื่อง
-//                                 'Please select', // กำหนดรายละเอียด
+                                'Please select', // กำหนดรายละเอียด
                                 $imageUrl, // กำหนด url รุปภาพ
                                 $actionBuilder  // กำหนด action object
                         )
