@@ -99,20 +99,10 @@ if(!is_null($events)){
                     break;
             }
             break;
-//         default:
-//             $textReplyMessage = "พิมพ์ให้ถูกซิ!!!";
-//                     $textMessage = new TextMessageBuilder($textReplyMessage);
-
-//                     $stickerID = 22;
-//                     $packageID = 2;
-//                     $StickerMessage = new StickerMessageBuilder($packageID,$stickerID);
-
-//                     $multiMessage =     new MultiMessageBuilder;
-//                     $multiMessage->add($textMessage);
-//                     $multiMessage->add($StickerMessage);
-
-//                     $replyData = $multiMessage; 
-//             break;  
+        default:
+            $textReplyMessage = "....";
+            $textMessage = new TextMessageBuilder($textReplyMessage);
+            break;  
     }
 }
 //l ส่วนของคำสั่งตอบกลับข้อความ
