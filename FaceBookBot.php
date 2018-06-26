@@ -46,6 +46,15 @@
       'message' => $answer
   ];
   }
+  if($messageText == "pic") {
+      $image_url = "https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg",
+      $answer = $image_url;
+  }
+  //send message to facebook bot
+  $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => [ 'text' => $answer ]
+  ];
 
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
