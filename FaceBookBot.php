@@ -26,7 +26,6 @@
         "type"=>"template",
         "payload"=>[
           "template_type"=>"button",
-          "image_url"=> "https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg",
           "text"=>"NOSTRA Map",
           "buttons"=>[
             [
