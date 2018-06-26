@@ -63,7 +63,7 @@ if(!is_null($events)){
     switch ($typeMessage){
         case 'text':
             switch ($userMessage) {
-                case (strstr($userMessage, "ติดต่อ") OR strstr($userMessage, "สอบถาม")):
+                case (strstr($userMessage, "สนใจ") OR strstr($userMessage, "น่าสนใจ")):
                     // กำหนด action 4 ปุ่ม 4 ประเภท
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
