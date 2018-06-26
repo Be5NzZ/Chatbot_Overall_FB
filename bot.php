@@ -86,8 +86,8 @@ if(!is_null($events)){
                     $imageUrl = 'https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg';
                     $replyData = new TemplateMessageBuilder('Button Template',
                         new ButtonTemplateBuilder(
-                                'button template builder', // กำหนดหัวเรื่อง
-                                'Please select', // กำหนดรายละเอียด
+                                'Content', // กำหนดหัวเรื่อง
+//                                 'Please select', // กำหนดรายละเอียด
                                 $imageUrl, // กำหนด url รุปภาพ
                                 $actionBuilder  // กำหนด action object
                         )
