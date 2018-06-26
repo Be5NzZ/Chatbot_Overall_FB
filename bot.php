@@ -105,20 +105,10 @@ if(!is_null($events)){
                     $replyData = new VideoMessageBuilder($videoUrl,$picThumbnail);
                     break;
                 case (strstr($userMessage, "รูป")):
-                    $replyData = new TemplateMessageBuilder('Image Carousel',
-                        new ImageCarouselTemplateBuilder(
-                            array(
-                                new ImageCarouselColumnTemplateBuilder(
-                                    'https://www.img.in.th/images/f3fc9546aad56230bc6df1de4c643830.jpg',
-                                ),
-                                new ImageCarouselColumnTemplateBuilder(
-                                    'https://www.img.in.th/images/6a06f00bd80753d12a18b35432957ee2.jpg',
-
-                                )                                       
-                            )
-                        )
-                    );
-                    break;  
+                    $picFullSize = 'https://www.img.in.th/images/6a06f00bd80753d12a18b35432957ee2.jpg';
+                    $picThumbnail = 'https://www.img.in.th/images/6a06f00bd80753d12a18b35432957ee2.th.jpg';
+                    $replyData = new ImageMessageBuilder($picFullSize,$picThumbnail);
+                    break; 
                 case (strstr($userMessage, "เหงา")):
                     $textReplyMessage = "ไม่คุย!";
                     $replyData = new TextMessageBuilder($textReplyMessage);
