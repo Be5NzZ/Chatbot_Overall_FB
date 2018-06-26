@@ -63,7 +63,7 @@ if(!is_null($events)){
     switch ($typeMessage){
         case 'text':
             switch ($userMessage) {
-                case (strstr($userMessage, "น่าสนใจ")):
+                case (strstr($userMessage, "สนใจ")):
                     // กำหนด action 4 ปุ่ม 4 ประเภท
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
@@ -72,8 +72,8 @@ if(!is_null($events)){
                         ),
                         new MessageTemplateActionBuilder(
                             'หาไรกินกันไหม',// ข้อความแสดงในปุ่ม
-                            'กินไรดี' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                        ),        
+                            'แนะนำร้านอาหาร หน่อย' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),      
                     );
                     $imageUrl = 'https://www.img.in.th/image/rkLse3';
                     $replyData = new TemplateMessageBuilder('Button Template',
@@ -84,7 +84,7 @@ if(!is_null($events)){
                                 $actionBuilder  // กำหนด action object
                         )
                     );              
-                    break;
+                break;
                 case (strstr($userMessage, "เที่ยว")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
