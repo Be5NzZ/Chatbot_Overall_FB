@@ -90,7 +90,11 @@ if(!is_null($events)){
 (66)2 266 9940
  nostrahotline@cdg.co.th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;                
+                    break;
+                case (strstr($userMessage, "เหงา")):
+                    $textReplyMessage = "ไม่คุย!";
+                    $replyData = new TextMessageBuilder($textReplyMessage);
+                    break;              
                 case (strstr($userMessage, "เที่ยว")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/midyear2018,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
