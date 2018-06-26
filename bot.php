@@ -119,10 +119,6 @@ if(!is_null($events)){
                         )
                     );
                     break;  
-                    $picFullSize = 'https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg';
-                    $picThumbnail = 'https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.th.jpg';
-                    $replyData = new ImageMessageBuilder($picFullSize,$picThumbnail);
-                    break;
                 case (strstr($userMessage, "เหงา")):
                     $textReplyMessage = "ไม่คุย!";
                     $replyData = new TextMessageBuilder($textReplyMessage);
