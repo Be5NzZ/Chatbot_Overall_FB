@@ -102,13 +102,9 @@ if(!is_null($events)){
                     $replyData = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);  
                     break;
                 case (strstr($userMessage, "ติดต่อ")):
-                  $textReplyMessage = "92/44 ชั้น 16 อาคารสาธรธานี 2 
-                                       ถนนสาทรเหนือ แขวงสีลม เขตบางรัก กรุงเทพฯ 10500
-                                       NOSTRA Hotline Service
-                                       (66)2 266 9940
-                                       nostrahotline@cdg.co.th";
-                  $replyData = new TextMessageBuilder($textReplyMessage);                                  
-                  break;       
+                    $textReplyMessage = "(66)2 266 9940 nostrahotline@cdg.co.th";
+                    $replyData = new TextMessageBuilder($textReplyMessage);
+                    break;   
             }
             break;
         default:
