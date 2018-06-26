@@ -67,9 +67,17 @@ if(!is_null($events)){
                     // กำหนด action 4 ปุ่ม 4 ประเภท
                     $actionBuilder = array(
                         new MessageTemplateActionBuilder(
-                            'Message Template',// ข้อความแสดงในปุ่ม
-                            'Hi' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
-                        ),      
+                            'ไปเที่ยวกัน',// ข้อความแสดงในปุ่ม
+                            'เที่ยวไหนดี' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),
+                        new MessageTemplateActionBuilder(
+                            'หาไรกินกันไหม',// ข้อความแสดงในปุ่ม
+                            'แนะนำร้านหร่อยๆ หน่อย' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),
+                        new MessageTemplateActionBuilder(
+                            'ไปพักผ่อนกันดีกว่า',// ข้อความแสดงในปุ่ม
+                            'ไหนๆ มีที่ไหนน่าไปเที่ยวบ้าง' // ข้อความที่จะแสดงฝั่งผู้ใช้ เมื่อคลิกเลือก
+                        ),        
                     );
                     $imageUrl = 'https://www.img.in.th/image/rkLse3';
                     $replyData = new TemplateMessageBuilder('Button Template',
