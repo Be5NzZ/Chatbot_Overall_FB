@@ -97,12 +97,13 @@ if(!is_null($events)){
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
+               default:
+                    $textReplyMessage = "....";
+                    $textMessage = new TextMessageBuilder($textReplyMessage);
+                    break;  
             }
             break;
-        default:
-            $textReplyMessage = "....";
-            $textMessage = new TextMessageBuilder($textReplyMessage);
-            break;  
+      
     }
 }
 //l ส่วนของคำสั่งตอบกลับข้อความ
