@@ -92,11 +92,7 @@ if(!is_null($events)){
                 case (strstr($userMessage, "กิน")):
                     $textReplyMessage = "https://map.nostramap.com/NostraMap/?layer/wongnai,feed/th";
                     $replyData = new TextMessageBuilder($textReplyMessage);
-                    break; 
-               default:
-                    $textReplyMessage = "Test TEst";
-                    $replyData = new TextMessageBuilder($textReplyMessage);
-                    break;                                          
+                    break;                                        
             }
             break;
         // default:
