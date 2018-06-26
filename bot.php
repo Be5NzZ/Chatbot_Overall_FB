@@ -100,7 +100,7 @@ if(!is_null($events)){
                     $replyData = new TextMessageBuilder($textReplyMessage);
                     break;
                 case (strstr($userMessage, "Video")):
-                    $picThumbnail = 'https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.th.jpg';
+                    $picThumbnail = 'https://www.img.in.th/images/d6cb793c237bd1c01c431fe368530b2c.th.jpg';
                     $videoUrl = "https://www.youtube.com/watch?v=_GYak5psQXs";                
                     $replyData = new VideoMessageBuilder($videoUrl,$picThumbnail);
                     break;
