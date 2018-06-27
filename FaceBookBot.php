@@ -24,6 +24,33 @@
       'message' => [ 'text' => $answer ]
   ];
 
+  
+  if($messageText == "hi") {  
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"What do you want to do next?",
+          "buttons"=>[
+            [
+              "type"=>"postback",
+              "title"=>"Contact",
+              "payload"=>"USER_DEFINED_PAYLOAD"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Product",
+              "payload"=>"USER_DEFINED_PAYLOAD"
+            ]
+          ]
+        ]
+        ]];
+        $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+  ];
+  }
+
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
     curl_setopt($ch, CURLOPT_POST, 1);
