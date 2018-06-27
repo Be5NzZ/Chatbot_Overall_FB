@@ -23,36 +23,30 @@
   ];
   
   if($messageText == "Hello") {  
-  $answer = ["attachment"=>[
-      "type"=>"template",
-      "payload"=>[
-        "template_type"=>"button",
-        "text"=>"Can i help you?",
-        "buttons"=>[
-          [
-            "type"=>"web_url",
-            "url"=>"http://www.nostramap.com/",
-            "title"=>"Show Website"
-          ],
-          [
-            "type"=>"postback",
-            "title"=>"more info",
-            "payload"=>"USER_DEFINED_PAYLOAD"
+      $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"Can i help you?",
+          "buttons"=>[
+            [
+              "type"=>"web_url",
+              "url"=>"http://www.nostramap.com/",
+              "title"=>"Show Website"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"more info",
+              "payload"=>"USER_DEFINED_PAYLOAD"
+            ]
           ]
         ]
-      ]
-      ]];
-      $response = [
-    'recipient' => [ 'id' => $senderId ],
-    'message' => $answer
-  ];
-  }
-  //send message to facebook bot
-  $response = [
-      'recipient' => [ 'id' => $senderId ],
-      'message' => [ 'text' => $answer ]
-  ];
-
+        ]];
+        $response = [
+          'recipient' => [ 'id' => $senderId ],
+          'message' => $answer
+        ];
+    }
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
