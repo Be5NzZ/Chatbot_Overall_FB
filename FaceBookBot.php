@@ -26,7 +26,8 @@
 
   
   if($messageText == "hi") {  
-    $answer = ["attachment"=>[
+    $answer = $answer = "Hello",
+        ["attachment"=>[
         "type"=>"template",
         "payload"=>[
           "template_type"=>"button",
