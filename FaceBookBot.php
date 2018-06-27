@@ -15,7 +15,7 @@
 
 
   //start message
-  if($messageText == "hi") {
+  if($messageText == "Hello") {
       $answer = "Hello";
   }
   //send message to facebook bot
@@ -25,8 +25,8 @@
   ];
 
   
-  if($messageText == "hi") {  
-    $answer = "Hello",
+  if($messageText == "Hi") {  
+    $answer =
         ["attachment"=>[
         "type"=>"template",
         "payload"=>[
