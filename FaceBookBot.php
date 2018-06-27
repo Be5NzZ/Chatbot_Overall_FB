@@ -22,31 +22,31 @@
 //       'message' => [ 'text' => $answer ]
 //   ];
   
-  if($messageText == "Hello" OR "Hi" OR "hi" OR "hello") {  
-      $answer = ["attachment"=>[
-        "type"=>"template",
-        "payload"=>[
-          "template_type"=>"button",
-          "text"=>"Can i help you?",
-          "buttons"=>[
-            [
-              "type"=>"postback",
-              "title"=>"Contact Info",
-              "payload"=>"USER_DEFINED_PAYLOAD"
-            ],
-            [
-              "type"=>"postback",
-              "title"=>"Product",
-              "payload"=>"USER_DEFINED_PAYLOAD"
-            ]
-          ]
-        ]
-        ]];
-        $response = [
-          'recipient' => [ 'id' => $senderId ],
-          'message' => $answer
-        ];
-    }
+//   if($messageText == "Hello" OR "Hi" OR "hi" OR "hello") {  
+//       $answer = ["attachment"=>[
+//         "type"=>"template",
+//         "payload"=>[
+//           "template_type"=>"button",
+//           "text"=>"Can i help you?",
+//           "buttons"=>[
+//             [
+//               "type"=>"postback",
+//               "title"=>"Contact Info",
+//               "payload"=>"USER_DEFINED_PAYLOAD"
+//             ],
+//             [
+//               "type"=>"postback",
+//               "title"=>"Product",
+//               "payload"=>"USER_DEFINED_PAYLOAD"
+//             ]
+//           ]
+//         ]
+//         ]];
+//         $response = [
+//           'recipient' => [ 'id' => $senderId ],
+//           'message' => $answer
+//         ];
+//     }
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
     curl_setopt($ch, CURLOPT_POST, 1);
