@@ -13,7 +13,7 @@
   $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
   $response = null;
   //set Message
-  if($messageText == "Contact Info") {
+  if($messageText == "Contact") {
       $answer = "92/44 ชั้น 16 อาคารสาธรธานี 2 
 ถนนสาทรเหนือ แขวงสีลม เขตบางรัก กรุงเทพฯ 10500
 
@@ -36,7 +36,7 @@ Email : nostrahotline@cdg.co.th";
           "buttons"=>[
             [
               "type"=>"postback",
-              "title"=>"Contact Info",
+              "title"=>"Contact",
               "payload"=>"USER_DEFINED_PAYLOAD"
             ],
             [
