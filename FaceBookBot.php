@@ -47,6 +47,18 @@
           'message' => $answer
         ];
     }
+    if ($messageText == "Contact Info") {
+      $answer = "92/44 ชั้น 16 อาคารสาธรธานี 2 
+ถนนสาทรเหนือ แขวงสีลม เขตบางรัก กรุงเทพฯ 10500
+
+NOSTRA Hotline Service
+(66)2 266 9940
+ nostrahotline@cdg.co.th"
+        $response = [
+          'recipient' => [ 'id' => $senderId ],
+          'message' => $answer
+        ];
+    }
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
     curl_setopt($ch, CURLOPT_POST, 1);
