@@ -23,7 +23,14 @@
         'message' => [ 'text' => $answer ]
       ];
   }
-
+  if($messageText == "Contact") {
+      $answer = "Hello2";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }
   
   if($messageText == "Hi") {  
     $answer =
