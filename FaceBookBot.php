@@ -13,13 +13,13 @@
   $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
   $response = null;
   //set Message
-  if($messageText == "hi") {
+  if($messageText == "Contact Info") {
       $answer = "92/44 ชั้น 16 อาคารสาธรธานี 2 
 ถนนสาทรเหนือ แขวงสีลม เขตบางรัก กรุงเทพฯ 10500
 
 NOSTRA Hotline Service
-(66)2 266 9940
-nostrahotline@cdg.co.th";
+Tel. : (66)2 266 9940
+Email : nostrahotline@cdg.co.th";
   }
   //send message to facebook bot
   $response = [
@@ -27,7 +27,7 @@ nostrahotline@cdg.co.th";
       'message' => [ 'text' => $answer ]
   ];
   
-  if($messageText == "Hello") {  
+  if($messageText == "Hello" OR "Menu") {  
       $answer = ["attachment"=>[
         "type"=>"template",
         "payload"=>[
