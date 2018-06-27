@@ -21,32 +21,32 @@
       'recipient' => [ 'id' => $senderId ],
       'message' => [ 'text' => $answer ]
   ];
-  if($messageText == "more") {  
-    $answer = ["attachment"=>[
-        "type"=>"template",
-        "payload"=>[
-          "template_type"=>"button",
-          "text"=>"NOSTRA Map",
-          "buttons"=>[
-            [
-              "type"=>"web_url",
-              "url"=>"http://www.nostramap.com/",
-              "title"=>"Website"
-            ],
-            [
-              "type"=>"web_url",
-              "url"=>"http://map.nostramap.com",
-              "title"=>"Show Case"
-            ]
+  
+  if($messageText == "Hello") {  
+  $answer = ["attachment"=>[
+      "type"=>"template",
+      "payload"=>[
+        "template_type"=>"button",
+        "text"=>"Can i help you?",
+        "buttons"=>[
+          [
+            "type"=>"web_url",
+            "url"=>"http://www.nostramap.com/",
+            "title"=>"Show Website"
+          ],
+          [
+            "type"=>"postback",
+            "title"=>"more info",
+            "payload"=>"USER_DEFINED_PAYLOAD"
           ]
         ]
-        ]];
-        $response = [
-      'recipient' => [ 'id' => $senderId ],
-      'message' => $answer
+      ]
+      ]];
+      $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => $answer
   ];
   }
-
   //send message to facebook bot
   $response = [
       'recipient' => [ 'id' => $senderId ],
