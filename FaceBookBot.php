@@ -13,16 +13,16 @@
   $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
   $response = null;
   //set Message
-  if($messageText == "hi") {
-      $answer = "Hello";
-  }
-  //send message to facebook bot
-  $response = [
-      'recipient' => [ 'id' => $senderId ],
-      'message' => [ 'text' => $answer ]
-  ];
+//   if($messageText == "hi") {
+//       $answer = "Hello";
+//   }
+//   //send message to facebook bot
+//   $response = [
+//       'recipient' => [ 'id' => $senderId ],
+//       'message' => [ 'text' => $answer ]
+//   ];
   
-  if($messageText == "Hello" OR "Hi" OR "hi" OR "hello") {  
+  if($messageText == "Hello") {  
       $answer = ["attachment"=>[
         "type"=>"template",
         "payload"=>[
