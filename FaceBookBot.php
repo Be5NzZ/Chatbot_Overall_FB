@@ -27,7 +27,7 @@ Email : nostrahotline@cdg.co.th";
       'message' => [ 'text' => $answer ]
   ];
   
-  if($messageText == "Hello" OR "Menu") {  
+  if($messageText == "Hello") {  
       $answer = ["attachment"=>[
         "type"=>"template",
         "payload"=>[
