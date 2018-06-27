@@ -38,6 +38,16 @@
               "type"=>"postback",
               "title"=>"Product",
               "payload"=>"USER_DEFINED_PAYLOAD"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Product",
+              "payload"=>"USER_DEFINED_PAYLOAD"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Product",
+              "payload"=>"USER_DEFINED_PAYLOAD"
             ]
           ]
         ]
