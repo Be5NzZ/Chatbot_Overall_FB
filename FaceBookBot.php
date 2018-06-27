@@ -12,19 +12,17 @@
   $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
   $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
   $response = null;
-  //start switch case
-  switch ($messageText) {
-      case "Hi":
-          $answer = "Hello";
-          $response = [
-            'recipient' => [ 'id' => $senderId ],
-            'message' => [ 'text' => $answer ]
-          ];
-          break; 
-      default: 
-          text = "Looking forward to the Weekend";
-  }
 
+
+  //start message
+  if($messageText == "hi") {
+      $answer = "Hello";
+  }
+  //send message to facebook bot
+  $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => [ 'text' => $answer ]
+  ];
 
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
