@@ -30,13 +30,13 @@
           "text"=>"Can i help you?",
           "buttons"=>[
             [
-              "type"=>"web_url",
-              "url"=>"http://www.nostramap.com/",
-              "title"=>"Show Website"
+              "type"=>"postback",
+              "title"=>"Contact Info",
+              "payload"=>"USER_DEFINED_PAYLOAD"
             ],
             [
               "type"=>"postback",
-              "title"=>"more info",
+              "title"=>"Product",
               "payload"=>"USER_DEFINED_PAYLOAD"
             ]
           ]
