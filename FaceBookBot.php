@@ -21,58 +21,11 @@
             'message' => [ 'text' => $answer ]
           ];
           break; 
-//       case 0:
-//           text = "Today is Sunday";
-//           break; 
       default: 
           text = "Looking forward to the Weekend";
   }
 
-//   if($messageText == "hi") {
-//       $answer = "Hello";
-//   }
-//   //send message to facebook bot
-//   $response = [
-//       'recipient' => [ 'id' => $senderId ],
-//       'message' => [ 'text' => $answer ]
-//   ];
-  
-//   if($messageText == "Hello") {  
-//       $answer = ["attachment"=>[
-//         "type"=>"template",
-//         "payload"=>[
-//           "template_type"=>"button",
-//           "text"=>"Can i help you?",
-//           "buttons"=>[
-//             [
-//               "type"=>"postback",
-//               "title"=>"Contact",
-//               "payload"=>"USER_DEFINED_PAYLOAD"
-//             ],
-//             [
-//               "type"=>"postback",
-//               "title"=>"Product",
-//               "payload"=>"USER_DEFINED_PAYLOAD"
-//             ]
-//           ]
-//         ]
-//         ]];
-//         $response = [
-//           'recipient' => [ 'id' => $senderId ],
-//           'message' => $answer
-//         ];
-//    }
 
-//   if($messageText == "Contact") {
-//       $answer = "NOSTRA Hotline Service
-// (66)2 266 9940
-//  nostrahotline@cdg.co.th";
-//   }
-//   //send message to facebook bot
-//   $response = [
-//       'recipient' => [ 'id' => $senderId ],
-//       'message' => [ 'text' => $answer ]
-//   ];
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
     curl_setopt($ch, CURLOPT_POST, 1);
