@@ -18,13 +18,18 @@
   //set Message
   if($messageText == "hi") {
       $answer = "Hello";
+      //send message to facebook bot
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => [ 'text' => $answer ]
+    ];
   }
 
   //send message to facebook bot
-  $response = [
-      'recipient' => [ 'id' => $senderId ],
-      'message' => [ 'text' => $answer ]
-  ];
+//   $response = [
+//       'recipient' => [ 'id' => $senderId ],
+//       'message' => [ 'text' => $answer ]
+//   ];
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
