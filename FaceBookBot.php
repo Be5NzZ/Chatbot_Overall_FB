@@ -90,6 +90,20 @@
       'message' => $answer
   ];
   }
+
+if($messageText == "Picture") {  
+    $answer = ["attachment"=>[
+        "type"=>"image",
+        "payload"=>[
+          "url"=>"https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg",
+          "is_reusable"=> true
+        ]
+    ]];
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+    ];
+  }
     //set Message
   if($messageText == "Start") {
       $answer = "Go Go Go!";
