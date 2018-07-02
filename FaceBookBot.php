@@ -50,6 +50,15 @@
       'message' => $answer
   ];
   }
+    //set Message
+  if($messageText == "Start") {
+      $answer = "Go Go Go!";
+      //send message to facebook bot
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => [ 'text' => $answer ]
+    ];
+  }
 
   //send message to facebook bot
 //   $response = [
