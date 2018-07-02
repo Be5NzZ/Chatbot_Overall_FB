@@ -50,6 +50,11 @@
               "type"=>"postback",
               "title"=>"Video",
               "payload"=> "Video"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"File",
+              "payload"=> "File"
             ]
           ]
         ]
