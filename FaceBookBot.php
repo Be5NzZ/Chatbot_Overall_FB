@@ -13,6 +13,10 @@
   $input = json_decode(file_get_contents('php://input'), true);
   $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
   $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
+  $postback = json_decode($input['entry'][0]['messaging'][0]['postback'],true);
+  if (!empty($postback)) { 
+      $message = $postback['payload'];
+  }
   $response = null;
 
   //set Message
@@ -40,9 +44,7 @@
             [
               "type"=>"postback",
               "title"=>"Start",
-              "payload"=> [
-                "text"=>"Start"
-              ]
+              "payload"=> "Start"
             ]
           ]
         ]
