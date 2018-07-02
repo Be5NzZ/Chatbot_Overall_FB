@@ -104,6 +104,20 @@ if($messageText == "Picture") {
       'message' => $answer
     ];
   }
+
+if($messageText == "video") {  
+    $answer = ["attachment"=>[
+        "type"=>"video",
+        "payload"=>[
+          "url"=>"https://www.youtube.com/watch?v=PMivT7MJ41M",
+          "is_reusable"=> true
+        ]
+    ]];
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+    ];
+  }
     //set Message
   if($messageText == "Start") {
       $answer = "Go Go Go!";
