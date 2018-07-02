@@ -40,7 +40,7 @@
             [
               "type"=>"postback",
               "title"=>"Start",
-              "payload"=>"USER_DEFINED_PAYLOAD"
+              "payload"=>"Start"
             ]
           ]
         ]
