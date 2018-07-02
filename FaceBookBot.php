@@ -26,8 +26,6 @@
     case "hi":
         $answer = "Hello";
         break;
-    default:
-        $answer = "incorrect";
   }
   //send message to facebook bot
   $response = [
