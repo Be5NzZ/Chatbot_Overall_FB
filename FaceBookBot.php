@@ -23,8 +23,11 @@
 
   //Test Switch Case
   switch($messageText) {
-    case "hi":
+    case ("hi" OR "Hi"):
         $answer = "Hello";
+        break;
+    case "how r u ?":
+        $answer = "Fine!";
         break;
   }
   //send message to facebook bot
