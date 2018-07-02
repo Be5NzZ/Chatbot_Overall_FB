@@ -40,7 +40,9 @@
             [
               "type"=>"postback",
               "title"=>"Start",
-              "payload"=>"Start"
+              "payload"=> [
+                "text"=>"Start"
+              ]
             ]
           ]
         ]
