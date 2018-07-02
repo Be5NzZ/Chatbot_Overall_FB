@@ -13,10 +13,7 @@
   $input = json_decode(file_get_contents('php://input'), true);
   $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
   $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
-  $postback = json_decode($input['entry'][0]['messaging'][0]['postback'],true);
-  if (!empty($postback)) { 
-      $message = $postback['payload'];
-  }
+  $payload = $input['entry'][0]['messaging'][0]['postback']['payload'];
   $response = null;
 
   //set Message
@@ -55,7 +52,7 @@
   ];
   }
     //set Message
-  if($messageText == "Start") {
+  if($payload == "Start") {
       $answer = "Go Go Go!";
       //send message to facebook bot
     $response = [
