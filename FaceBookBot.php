@@ -45,21 +45,6 @@
               "type"=>"postback",
               "title"=>"Picture",
               "payload"=> "Picture"
-            ],
-            [
-              "type"=>"postback",
-              "title"=>"Video",
-              "payload"=> "Video"
-            ],
-            [
-              "type"=>"postback",
-              "title"=>"Voice",
-              "payload"=> "Voice"
-            ],
-            [
-              "type"=>"postback",
-              "title"=>"File",
-              "payload"=> "File"
             ]
           ]
         ]
