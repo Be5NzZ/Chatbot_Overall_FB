@@ -37,14 +37,29 @@
           "text"=>"What do you want to do next?",
           "buttons"=>[
             [
-              "type"=>"web_url",
-              "url"=>"https://petersapparel.parseapp.com",
-              "title"=>"Show Website"
+              "type"=>"postback",
+              "title"=>"Contact",
+              "payload"=>"Contact"
             ],
             [
               "type"=>"postback",
-              "title"=>"Start",
-              "payload"=> "Start"
+              "title"=>"Picture",
+              "payload"=> "Picture"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Video",
+              "payload"=> "Video"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Voice",
+              "payload"=> "Voice"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"File",
+              "payload"=> "File"
             ]
           ]
         ]
@@ -64,11 +79,16 @@
     ];
   }
 
-  //send message to facebook bot
-//   $response = [
-//       'recipient' => [ 'id' => $senderId ],
-//       'message' => [ 'text' => $answer ]
-//   ];
+    if($messageText == "Contact") {
+      $answer = "NOSTRA Hotline Service
+(66)2 266 9940
+ nostrahotline@cdg.co.th";
+      //send message to facebook bot
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => [ 'text' => $answer ]
+    ];
+  }
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
