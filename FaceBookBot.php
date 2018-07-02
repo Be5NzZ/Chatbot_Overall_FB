@@ -14,6 +14,9 @@
   $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
   $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
   $payload = $input['entry'][0]['messaging'][0]['postback']['payload'];
+  if (!empty($payload)) {
+    $messageText = $payload;
+  }
   $response = null;
 
   //set Message
@@ -52,7 +55,7 @@
   ];
   }
     //set Message
-  if($payload == "Start") {
+  if($messageText == "Start") {
       $answer = "Go Go Go!";
       //send message to facebook bot
     $response = [
