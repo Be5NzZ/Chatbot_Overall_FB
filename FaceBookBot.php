@@ -48,13 +48,39 @@
             ],
             [
               "type"=>"postback",
+              "title"=>"More",
+              "payload"=> "more"
+            ]
+          ]
+        ]
+        ]];
+        $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+  ];
+  }
+
+  if($messageText == "more") {  
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"What do you want to do next?",
+          "buttons"=>[
+            [
+              "type"=>"postback",
               "title"=>"Video",
-              "payload"=> "Video"
+              "payload"=>"video"
             ],
             [
               "type"=>"postback",
               "title"=>"File",
-              "payload"=> "File"
+              "payload"=> "file"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Vioce",
+              "payload"=> "voice"
             ]
           ]
         ]
