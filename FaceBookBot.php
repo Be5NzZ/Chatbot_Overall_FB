@@ -45,6 +45,11 @@
               "type"=>"postback",
               "title"=>"Picture",
               "payload"=> "Picture"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Video",
+              "payload"=> "Video"
             ]
           ]
         ]
