@@ -262,6 +262,23 @@ if($messageText == "picture") {
       ];
     }
 
+  if($messageText == "media") {  
+      $answer = ["attachment"=>[
+          "type"=>"template",
+          "payload"=>[
+            "template_type"=>"media",
+            "elements"=>[
+              "media_type"=>"video"
+              "url"=>"https://www.facebook.com/NOSTRAMap/videos/1490089924434681/",
+            ]
+          ]
+      ]];
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => $answer
+      ];
+    }
+
     if($messageText == "Contact") {
       $answer = "NOSTRA Hotline Service
 (66)2 266 9940
