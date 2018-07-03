@@ -152,7 +152,7 @@
 
 //List Template
 if($messageText == "list"){
- $answer = ["attachment"=>[
+  $answer = ["attachment"=>[
       "type"=>"template",
       "payload"=>[
         "template_type"=>"list",
@@ -223,63 +223,10 @@ if($messageText == "picture") {
       'recipient' => [ 'id' => $senderId ],
       'message' => $answer
     ];
-  }
+}
 
 
-
-  //File
-  if($messageText == "file") {  
-      $answer = ["attachment"=>[
-          "type"=>"file",
-          "payload"=>[
-            "url"=>"https://drive.google.com/open?id=1DOhq5GQOg9Ff2MNeWP9ghG4LUWco35k3"
-          ]
-      ]];
-      $response = [
-        'recipient' => [ 'id' => $senderId ],
-        'message' => $answer
-      ];
-    }
-   //open_graph
-  if($messageText == "open") {  
-      $answer = ["attachment"=>[
-          "type"=>"template",
-          "payload"=>[
-            "template_type"=>"open_graph",
-            "elements"=>[
-              "url"=>"https://open.spotify.com/track/4ABdTWafMCXfATpILRuZFW",
-              "buttons"=>[
-                "type"=>"web_url",
-                "url"=>"https://en.wikipedia.org/wiki/Rickrolling",
-                "title"=>"view more"
-              ]
-            ]
-          ]
-      ]];
-      $response = [
-        'recipient' => [ 'id' => $senderId ],
-        'message' => $answer
-      ];
-    }
-
-  if($messageText == "media") {  
-      $answer = ["attachment"=>[
-          "type"=>"template",
-          "payload"=>[
-            "template_type"=>"media",
-            "elements"=>[
-              "media_type"=>"video"
-              "url"=>"https://www.facebook.com/NOSTRAMap/videos/1490089924434681/",
-            ]
-          ]
-      ]];
-      $response = [
-        'recipient' => [ 'id' => $senderId ],
-        'message' => $answer
-      ];
-    }
-
-    if($messageText == "Contact") {
+  if($messageText == "Contact") {
       $answer = "NOSTRA Hotline Service
 (66)2 266 9940
  nostrahotline@cdg.co.th";
@@ -288,7 +235,7 @@ if($messageText == "picture") {
         'recipient' => [ 'id' => $senderId ],
         'message' => [ 'text' => $answer ]
       ];
-    }
+  }
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
