@@ -121,6 +121,33 @@
   ];
   }
 
+  if($messageText == "generic"){
+     $answer = ["attachment"=>[
+      "type"=>"template",
+      "payload"=>[
+        "template_type"=>"generic",
+        "elements"=>[
+          [
+            "title"=>"Welcome to NOSTRA Map",
+            "item_url"=>"http://www.nostramap.com/about/company/",
+            "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
+            "subtitle"=>"NOSTRA MAP THE MAP YOU CAN TRUST.",
+            "buttons"=>[
+              [
+                "type"=>"web_url",
+                "url"=>"http://www.nostramap.com/",
+                "title"=>"View Website"
+              ]             
+            ]
+          ]
+        ]
+      ]
+    ]];
+     $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => $answer 
+];}
+
 if($messageText == "picture") {  
     $answer = ["attachment"=>[
         "type"=>"image",
