@@ -130,7 +130,7 @@
           [
             "title"=>"Welcome to NOSTRA Map",
             "item_url"=>"http://www.nostramap.com/about/company/",
-            "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
+            "image_url"=>"https://www.img.in.th/images/6a06f00bd80753d12a18b35432957ee2.jpg",
             "subtitle"=>"NOSTRA MAP THE MAP YOU CAN TRUST.",
             "buttons"=>[
               [
@@ -146,6 +146,65 @@
      $response = [
     'recipient' => [ 'id' => $senderId ],
     'message' => $answer 
+];}
+
+if($messageText == "list"){
+ $answer = ["attachment"=>[
+      "type"=>"template",
+      "payload"=>[
+        "template_type"=>"list",
+        "elements"=>[
+          [
+             "title"=> "NOSTRA",
+                    "image_url"=> "https://www.img.in.th/images/6a06f00bd80753d12a18b35432957ee2.jpg",
+                    "subtitle"=> "See all our Products",
+                    "default_action"=> [
+                        "type"=> "web_url",
+                        "url"=> "http://www.nostramap.com/business/",                       
+                        "webview_height_ratio"=> "tall",
+                        // "messenger_extensions"=> true,
+                        // "fallback_url"=> "https://peterssendreceiveapp.ngrok.io/"
+                    ],
+            "buttons"=>[
+              [
+                "type"=>"web_url",
+                "url"=>"http://www.nostramap.com/business/",
+                "title"=>"View Website"
+              ],
+            ]
+          ],
+            [
+            "title"=>"Welcome to Peter\'s Hats",
+            "item_url"=>"http://www.nostramap.com/business/",
+            "image_url"=>"https://www.img.in.th/images/6a06f00bd80753d12a18b35432957ee2.jpg",
+            "subtitle"=>"NOSTRA MAP THE MAP YOU CAN TRUST.",
+            "buttons"=>[
+              [
+                "type"=>"web_url",
+                "url"=>"http://www.nostramap.com/business/",
+                "title"=>"View Website"
+              ],
+            ]
+          ],
+            [
+            "title"=>"Welcome to Peter\'s Hats",
+            "item_url"=>"http://www.nostramap.com/business/",
+            "image_url"=>"https://www.img.in.th/images/6a06f00bd80753d12a18b35432957ee2.jpg",
+            "subtitle"=>"NOSTRA MAP THE MAP YOU CAN TRUST.",
+            "buttons"=>[
+              [
+                "type"=>"web_url",
+                "url"=>"http://www.nostramap.com/business/",
+                "title"=>"View Website"
+              ],
+            ]
+          ]
+        ]
+      ]
+    ]];
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => $answer
 ];}
 
 if($messageText == "picture") {  
