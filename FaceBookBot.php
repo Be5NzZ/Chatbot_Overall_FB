@@ -44,7 +44,7 @@
             [
               "type"=>"postback",
               "title"=>"Picture",
-              "payload"=> "Picture"
+              "payload"=> "picture"
             ],
             [
               "type"=>"postback",
@@ -91,7 +91,7 @@
   ];
   }
 
-if($messageText == "Picture") {  
+if($messageText == "picture") {  
     $answer = ["attachment"=>[
         "type"=>"image",
         "payload"=>[
@@ -109,8 +109,7 @@ if($messageText == "video") {
     $answer = ["attachment"=>[
         "type"=>"video",
         "payload"=>[
-          "url"=>"https://www.youtube.com/watch?v=PMivT7MJ41M",
-          "is_reusable"=> true
+          "url"=>"https://youtu.be/tt2k8PGm-TI"
         ]
     ]];
     $response = [
