@@ -107,9 +107,12 @@ if($messageText == "picture") {
 
 if($messageText == "video") {  
     $answer = ["attachment"=>[
-        "type"=>"video",
+        "type"=>"template",
         "payload"=>[
-          "url"=>"https://youtu.be/tt2k8PGm-TI"
+          "template_type"=>"open_graph",
+          "elementsl"=>[
+            "url"=>"https://youtu.be/tt2k8PGm-TI"
+          ]
         ]
     ]];
     $response = [
