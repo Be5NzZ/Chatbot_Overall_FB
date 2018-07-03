@@ -90,6 +90,7 @@
       'message' => $answer
   ];
   }
+
    if($messageText == "more template") {  
     $answer = ["attachment"=>[
         "type"=>"template",
@@ -121,6 +122,7 @@
   ];
   }
 
+  //Generic Template
   if($messageText == "generic"){
      $answer = ["attachment"=>[
       "type"=>"template",
@@ -148,6 +150,7 @@
     'message' => $answer 
 ];}
 
+//List Template
 if($messageText == "list"){
  $answer = ["attachment"=>[
       "type"=>"template",
@@ -207,6 +210,7 @@ if($messageText == "list"){
     'message' => $answer
 ];}
 
+//Picture
 if($messageText == "picture") {  
     $answer = ["attachment"=>[
         "type"=>"image",
@@ -221,6 +225,7 @@ if($messageText == "picture") {
     ];
   }
 
+//Video
 if($messageText == "video") {  
     $answer = ["attachment"=>[
         "type"=>"template",
@@ -237,6 +242,7 @@ if($messageText == "video") {
     ];
   }
 
+  //File
   if($messageText == "file") {  
       $answer = ["attachment"=>[
           "type"=>"file",
@@ -249,26 +255,38 @@ if($messageText == "video") {
         'message' => $answer
       ];
     }
-    //set Message
-  if($messageText == "Start") {
-      $answer = "Go Go Go!";
-      //send message to facebook bot
-    $response = [
-      'recipient' => [ 'id' => $senderId ],
-      'message' => [ 'text' => $answer ]
-    ];
-  }
+   //open_graph
+  if($messageText == "open") {  
+      $answer = ["attachment"=>[
+          "type"=>"template",
+          "payload"=>[
+            "template_type"=>"open_graph",
+            "elements"=>[
+              "url"=>"https://open.spotify.com/track/4ABdTWafMCXfATpILRuZFW",
+              "buttons"=>[
+                "type"=>"web_url",
+                "url"=>"https://open.spotify.com/album/5XZ80YbIhMctMkIHzZBB0a",
+                "title"=>"view more"
+              ]
+            ]
+          ]
+      ]];
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => $answer
+      ];
+    }
 
     if($messageText == "Contact") {
       $answer = "NOSTRA Hotline Service
 (66)2 266 9940
  nostrahotline@cdg.co.th";
       //send message to facebook bot
-    $response = [
-      'recipient' => [ 'id' => $senderId ],
-      'message' => [ 'text' => $answer ]
-    ];
-  }
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+    }
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
