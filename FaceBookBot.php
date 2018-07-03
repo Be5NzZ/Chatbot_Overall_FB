@@ -125,7 +125,7 @@ if($messageText == "video") {
       $answer = ["attachment"=>[
           "type"=>"file",
           "payload"=>[
-            "url"=>"https://doc-04-c8-docs.googleusercontent.com/docs/securesc/m1kastpds2n8hcvaujflsb7bh4p4tgr1/sd43a25s44fip4l5808ghpteh2llmk5m/1530576000000/14870214237621755306/14870214237621755306/1DOhq5GQOg9Ff2MNeWP9ghG4LUWco35k3?e=download&nonce=k1m81jaite3mm&user=14870214237621755306&hash=204eeij4vnptm7i5tb1kq3f1n0m7f0gd"
+            "url"=>"https://drive.google.com/open?id=1DOhq5GQOg9Ff2MNeWP9ghG4LUWco35k3"
           ]
       ]];
       $response = [
