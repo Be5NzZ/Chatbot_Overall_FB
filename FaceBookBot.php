@@ -225,22 +225,7 @@ if($messageText == "picture") {
     ];
   }
 
-//Video
-if($messageText == "video") {  
-    $answer = ["attachment"=>[
-        "type"=>"template",
-        "payload"=>[
-          "template_type"=>"open_graph",
-          "elementsl"=>[
-            "url"=>"https://youtu.be/tt2k8PGm-TI"
-          ]
-        ]
-    ]];
-    $response = [
-      'recipient' => [ 'id' => $senderId ],
-      'message' => $answer
-    ];
-  }
+
 
   //File
   if($messageText == "file") {  
@@ -265,7 +250,7 @@ if($messageText == "video") {
               "url"=>"https://open.spotify.com/track/4ABdTWafMCXfATpILRuZFW",
               "buttons"=>[
                 "type"=>"web_url",
-                "url"=>"https://open.spotify.com/album/5XZ80YbIhMctMkIHzZBB0a",
+                "url"=>"https://en.wikipedia.org/wiki/Rickrolling",
                 "title"=>"view more"
               ]
             ]
