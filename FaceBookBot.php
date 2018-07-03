@@ -90,7 +90,36 @@
       'message' => $answer
   ];
   }
-
+   if($messageText == "more template") {  
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"What do you want to do next?",
+          "buttons"=>[
+            [
+              "type"=>"postback",
+              "title"=>"Generic Template",
+              "payload"=>"generic"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"List Template",
+              "payload"=> "list"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Reciept Template",
+              "payload"=> "reciept"
+            ]
+          ]
+        ]
+        ]];
+        $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+  ];
+  }
 
 if($messageText == "picture") {  
     $answer = ["attachment"=>[
