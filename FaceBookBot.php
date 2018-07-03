@@ -31,7 +31,6 @@
 
   if($messageText == "สอบถาม") {  
     $answer = ["attachment"=>[
-        "sender_action"=>"typing_on",
         "type"=>"template",
         "payload"=>[
           "template_type"=>"button",
