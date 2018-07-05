@@ -237,6 +237,33 @@ if($messageText == "picture") {
       ];
   }
 
+  if ($messageText == "QA") {
+    $answer = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Is this the right picture?",
+            "subtitle": "Tap a button to answer.",
+            "image_url": "https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg",
+            "buttons": [
+              {
+                "type": "postback",
+                "title": "Yes!",
+                "payload": "yes",
+              },
+              {
+                "type": "postback",
+                "title": "No!",
+                "payload": "no",
+              }
+            ],
+          }]
+        }
+      }
+    }
+  }    
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
