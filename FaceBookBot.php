@@ -240,14 +240,16 @@ if($messageText == "picture") {
   }
 
   if ($accessToken) {
-	  for ($x = 0; $x = 1; $x++) {
-       $answer = "First Time";
+	$answer = "First Time";
        //send message to facebook bot
        $response = [
          'recipient' => [ 'id' => $senderId ],
          'message' => [ 'text' => $answer ]
        ];
-	  }
+// 	if(!emtry($response)) {
+// 		break;
+// 	}
+	  
   }    
 
 //   if ($accessToken) {
