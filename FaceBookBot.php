@@ -239,9 +239,9 @@ if($messageText == "picture") {
 
   if ($messageText == "QA") {
        $answer = ["attachment"=>[
-        "type"=>"image",
+        "type"=>"video",
         "payload"=>[
-          "url"=>"https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg",
+          "url"=>"https://www.facebook.com/NOSTRAMap/videos/1440315589412115/",
           "is_reusable"=> true
         ]
     ]];
