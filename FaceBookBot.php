@@ -239,19 +239,16 @@ if($messageText == "picture") {
       ];
   }
 
-//   if ($messageText == "QA") {
-//        $answer = ["attachment"=>[
-//         "type"=>"video",
-//         "payload"=>[
-//           "url"=>"https://github.com/yyingz/NewChatBot/blob/master/video.mp4",
-//           "is_reusable"=> true
-//         ]
-//     ]];
-//     $response = [
-//       'recipient' => [ 'id' => $senderId ],
-//       'message' => $answer
-//     ];
-//   }    
+  if ($accessToken) {
+      $answer = "NOSTRA Hotline Service
+(66)2 266 9940
+ nostrahotline@cdg.co.th";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }    
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
