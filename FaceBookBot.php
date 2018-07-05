@@ -241,7 +241,7 @@ if($messageText == "picture") {
        $answer = ["attachment"=>[
         "type"=>"video",
         "payload"=>[
-          "url"=>"https://www.facebook.com/NOSTRAMap/videos/1440315589412115/",
+          "url"=>"https://github.com/yyingz/NewChatBot/blob/master/video.mp4",
           "is_reusable"=> true
         ]
     ]];
