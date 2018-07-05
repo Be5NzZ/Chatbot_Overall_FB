@@ -238,34 +238,16 @@ if($messageText == "picture") {
   }
 
   if ($messageText == "QA") {
-    $answer = {
-      "attachment"=> {
-        "type"=> "template",
-        "payload"=> {
-          "template_type"=> "generic",
-          "elements"=> [{
-            "title"=> "Is this the right picture?",
-            "subtitle"=> "Tap a button to answer.",
-            "image_url"=> "https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg",
-            "buttons"=> [
-              {
-                "type"=> "postback",
-                "title"=> "Yes!",
-                "payload"=> "yes",
-              },
-              {
-                "type"=> "postback",
-                "title"=> "No!",
-                "payload"=> "no",
-              }
-            ],
-          }]
-        }
-      }
-    }
+       $answer = ["attachment"=>[
+        "type"=>"image",
+        "payload"=>[
+          "url"=>"https://www.img.in.th/images/2457764ef43d1fb1dffdc577a982c2a6.jpg",
+          "is_reusable"=> true
+        ]
+    ]];
     $response = [
-        'recipient' => [ 'id' => $senderId ],
-        'message' => [ 'text' => $answer ]
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
     ];
   }    
 
