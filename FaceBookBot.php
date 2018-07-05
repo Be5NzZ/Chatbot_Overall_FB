@@ -239,18 +239,17 @@ if($messageText == "picture") {
       ];
   }
 
-//   if ($accessToken) {
-// 	$answer = "First Time";
-//        //send message to facebook bot
-//        $response = [
-//          'recipient' => [ 'id' => $senderId ],
-//          'message' => [ 'text' => $answer ]
-//        ];
-// // 	if(!emtry($response)) {
-// // 		break;
-// // 	}
-	  
-//   }    
+  if ($accessToken) {
+	$answer = "First Time";
+       //send message to facebook bot
+       $response = [
+         'recipient' => [ 'id' => $senderId ],
+         'message' => [ 'text' => $answer ]
+       ];
+	if(!emtry($response)) {
+		break;
+	} 
+  }    
 
  
 
