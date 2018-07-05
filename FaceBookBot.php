@@ -14,6 +14,8 @@
   $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
   $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
   $payload = $input['entry'][0]['messaging'][0]['postback']['payload'];
+  
+
   if (!empty($payload)) {
     $messageText = $payload;
   }
@@ -237,19 +239,19 @@ if($messageText == "picture") {
       ];
   }
 
-  if ($messageText == "QA") {
-       $answer = ["attachment"=>[
-        "type"=>"video",
-        "payload"=>[
-          "url"=>"https://github.com/yyingz/NewChatBot/blob/master/video.mp4",
-          "is_reusable"=> true
-        ]
-    ]];
-    $response = [
-      'recipient' => [ 'id' => $senderId ],
-      'message' => $answer
-    ];
-  }    
+//   if ($messageText == "QA") {
+//        $answer = ["attachment"=>[
+//         "type"=>"video",
+//         "payload"=>[
+//           "url"=>"https://github.com/yyingz/NewChatBot/blob/master/video.mp4",
+//           "is_reusable"=> true
+//         ]
+//     ]];
+//     $response = [
+//       'recipient' => [ 'id' => $senderId ],
+//       'message' => $answer
+//     ];
+//   }    
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
