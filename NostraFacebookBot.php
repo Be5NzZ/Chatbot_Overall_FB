@@ -31,8 +31,8 @@
 
   if($messageText == "ข้อมูลติดต่อ (Contact Information)") {
       $answer = "NOSTRA Hotline Service
-(66)2 266 9940
- nostrahotline@cdg.co.th";
+Tel : (66)2 266 9940
+E-mail : nostrahotline@cdg.co.th";
       //send message to facebook bot
       $response = [
         'recipient' => [ 'id' => $senderId ],
@@ -49,7 +49,7 @@
       ];
   }
 
-  if($messageText == "ค้นหาสถานที่") {
+  if($messageText == "ค้นหาสถานที่ (Search on NOSTRA Map)") {
       $answer = "https://map.nostramap.com/";
       //send message to facebook bot
       $response = [
