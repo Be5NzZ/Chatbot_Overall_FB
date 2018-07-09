@@ -228,7 +228,7 @@ if($messageText == "picture") {
 }
 
 
-  if($messageText == "Contact") {
+  if($messageText == "ข้อมูลติดต่อ (Contact Information)") {
       $answer = "NOSTRA Hotline Service
 (66)2 266 9940
  nostrahotline@cdg.co.th";
@@ -238,19 +238,7 @@ if($messageText == "picture") {
         'message' => [ 'text' => $answer ]
       ];
   }
-
-  if($messageText == "ข้อมูลติดต่อทีมงานโดยตรง") {
-      $answer = "NOSTRA Hotline Service
-(66)2 266 9940
- nostrahotline@cdg.co.th";
-      //send message to facebook bot
-      $response = [
-        'recipient' => [ 'id' => $senderId ],
-        'message' => [ 'text' => $answer ]
-      ];
-  }
-
-  if($messageText == "แสดงความคิดเห็นเพิ่มเติมเกี่ยวกับแอพลิเคชัน") {
+  if($messageText == "แสดงความคิดเห็นเกี่ยวกับแอปพลิเคชัน (Application Feedback)") {
       $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
       //send message to facebook bot
       $response = [
