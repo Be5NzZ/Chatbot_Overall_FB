@@ -1,7 +1,7 @@
 <?php
   // parameters
   $hubVerifyToken = 'nostra_bot';
-  $accessToken = "  ";
+  $accessToken = "EAAYju4X7cmsBAOZAQVoQi8BPnjtIITeY6NcBYYwVpVZChonNFsJiwxsv1hLhci5MdxFZCbj7hSUJGgOtpNW1xGz1LKLezY24XYoSLOmJ7degYPIwTllMOuHRtinuGInNmdI9ZBLg0mRdFqVEI31qmPoOHxq2ZBcREdEZCDgZCqHBv1rm3yLPvQt";
   
   // check token at setup
   if ($_REQUEST['hub_verify_token'] === $hubVerifyToken) {
