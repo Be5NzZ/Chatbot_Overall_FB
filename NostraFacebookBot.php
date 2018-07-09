@@ -39,6 +39,24 @@
         'message' => [ 'text' => $answer ]
       ];
   }
+
+  if($messageText == "แสดงความคิดเห็นเพิ่มเติมเกี่ยวกับแอพลิเคชัน") {
+      $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }
+
+  if($messageText == "ค้นหาสถานที่") {
+      $answer = "https://map.nostramap.com/";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }
  
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
