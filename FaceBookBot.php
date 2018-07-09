@@ -150,7 +150,7 @@
      $response = [
     'recipient' => [ 'id' => $senderId ],
     'message' => $answer 
-];}
+  ];}
 
 //List Template
 if($messageText == "list"){
@@ -239,7 +239,52 @@ if($messageText == "picture") {
       ];
   }
 
+  if($messageText == "ข้อมูลติดต่อทีมงานโดยตรง") {
+      $answer = "NOSTRA Hotline Service
+(66)2 266 9940
+ nostrahotline@cdg.co.th";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }
 
+  if($messageText == "แสดงความคิดเห็นเพิ่มเติมเกี่ยวกับแอพลิเคชัน") {
+      $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }
+
+  if($messageText == "ค้นหาสถานที่"){
+     $answer = ["attachment"=>[
+      "type"=>"template",
+      "payload"=>[
+        "template_type"=>"generic",
+        "elements"=>[
+          [
+            "title"=>"NOSTRA Map",
+            "item_url"=>"https://map.nostramap.com",
+            "image_url"=>"https://drive.google.com/drive/folders/0B6swNi9kCnwUaGJFZC02T1c2NnM",
+            "subtitle"=>"NOSTRA MAP THE MAP YOU CAN TRUST.",
+            "buttons"=>[
+              [
+                "type"=>"web_url",
+                "url"=>"http://www.nostramap.com/",
+                "title"=>"ค้นหาบน NOSTRA Map"
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]];
+     $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => $answer 
+  ];}
 
  
 
