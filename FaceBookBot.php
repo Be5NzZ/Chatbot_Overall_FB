@@ -227,6 +227,19 @@ if($messageText == "picture") {
     ];
 }
 
+//Video
+if($messageText == "video") {  
+    $answer = ["attachment"=>[
+        "type"=>"image",
+        "payload"=>[
+          "url"=>"https://www.facebook.com/yyingzer/videos/vb.100001118685766/1669375473109726/?type=2&video_source=user_video_tab",
+        ]
+    ]];
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+    ];
+}
 
   if($messageText == "ข้อมูลติดต่อ (Contact Information)") {
       $answer = "NOSTRA Hotline Service
