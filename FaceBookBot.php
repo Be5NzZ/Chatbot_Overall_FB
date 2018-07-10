@@ -232,7 +232,7 @@ if($messageText == "video") {
     $answer = ["attachment"=>[
         "type"=>"image",
         "payload"=>[
-          "url"=>"https://www.facebook.com/yyingzer/videos/vb.100001118685766/1669375473109726/?type=2&video_source=user_video_tab",
+          "url"=>"https://catchvideo.net/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Ftime_continue%3D3%26v%3Dh53SjVGMwos&ext=0",
         ]
     ]];
     $response = [
