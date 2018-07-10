@@ -57,7 +57,21 @@ E-mail : nostrahotline@cdg.co.th";
         'message' => [ 'text' => $answer ]
       ];
   }
- 
+
+  //Picture
+  if($messageText == "vid") {  
+    $answer = ["attachment"=>[
+        "type"=>"video",
+        "payload"=>[
+          "url"=>"https://www.facebook.com/NOSTRAMap/videos/1098390336937977/",
+        ]
+    ]];
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+    ];
+  }
+
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
   curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($response));
