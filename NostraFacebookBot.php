@@ -46,9 +46,9 @@
               "payload"=> "Application Feedback"
             ],
             [
-              "type"=>"postback",
-              "title"=>"Search on NOSTRA Map",
-              "payload"=> "Search"
+              "type"=>"web_url",
+              "url"=>"https://map.nostramap.com/",
+              "title"=>"Search on NOSTRA Map"
             ]
           ]
         ]
@@ -81,7 +81,7 @@ E-mail : nostrahotline@cdg.co.th";
       ];
   }
 
-  if($messageText == "แสดงความคิดเห็นเกี่ยวกับแอปพลิเคชัน (Application Feedback)") {
+  if(substr_count($messageText, 'Feedback')) {
       $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
       //send message to facebook bot
       $response = [
@@ -90,14 +90,14 @@ E-mail : nostrahotline@cdg.co.th";
       ];
   }
 
-  if($messageText == "ค้นหาสถานที่ (Search on NOSTRA Map)") {
-      $answer = "https://map.nostramap.com/";
-      //send message to facebook bot
-      $response = [
-        'recipient' => [ 'id' => $senderId ],
-        'message' => [ 'text' => $answer ]
-      ];
-  }
+//   if(substr_count($messageText, 'Search')) {
+//       $answer = "https://map.nostramap.com/";
+//       //send message to facebook bot
+//       $response = [
+//         'recipient' => [ 'id' => $senderId ],
+//         'message' => [ 'text' => $answer ]
+//       ];
+//   }
 
   //Picture
   if($messageText == "vid") {  
