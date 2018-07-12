@@ -1,7 +1,7 @@
 <?php
   // parameters
   $hubVerifyToken = 'tk_nom_sod';
-  $accessToken = "EAAbHInA6V4kBAMMshjyAmDumD2lRxm6rnYAJ4ZBNgIFsFN5DVcb0wuXE4IZAa74f7iq25jhvQuNlp35RLEWhxER91YqNIXUaLacMS1eEvlZAYcM11fHBDJmo2sbdp5AzIYXigZBHWe4kzTELmqlrKYGlud4zXFiL3Jst47wcRUfaOZB2cfFT3";
+  $accessToken = "EAAbHInA6V4kBAETchQpZCPDBuakiSCSO5Tr3Fcl2ea9KlJTa05nntGFfKR7TBgmwhIP7tOv8gr666lqqChvhnM8vbIfOtxmGBuhKxUwZCZA7HWv2Orc7BuTQIxcxHdQ798TYAGenSCQXsqPdcGK8pI2B2z3o4s3GH5gpPY1EQbsM21zONWE";
   
   // check token at setup
   if ($_REQUEST['hub_verify_token'] === $hubVerifyToken) {
