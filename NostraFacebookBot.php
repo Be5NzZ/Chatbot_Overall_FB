@@ -21,13 +21,36 @@
 
   //set Message
   if($messageText == "hi" OR "สวัสดี") {
-      $answer = "Hello";
-      //send message to facebook bot
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"Can i help u?",
+          "buttons"=>[
+            [
+              "type"=>"postback",
+              "title"=>"Contact Information",
+              "payload"=>"Contact Information"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Application Feedback",
+              "payload"=> "Application Feedback"
+            ],
+            [
+              "type"=>"web_url",
+              "url"=>"https://map.nostramap.com/",
+              "title"=>"Search on NOSTRA Map"
+            ]
+          ]
+        ]
+    ]];
     $response = [
       'recipient' => [ 'id' => $senderId ],
-      'message' => [ 'text' => $answer ]
+      'message' => $answer
     ];
   }
+
   if($messageText == "help" OR "menu" OR "เมนู") {  
     $answer = ["attachment"=>[
         "type"=>"template",
