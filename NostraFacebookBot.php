@@ -20,7 +20,7 @@
   $response = null;
 
   //set Message
-  if($messageText == "hi") {
+  if($messageText == "hi" OR "สวัสดี") {
       $answer = "Hello";
       //send message to facebook bot
     $response = [
