@@ -28,8 +28,49 @@
       'message' => [ 'text' => $answer ]
     ];
   }
+  if($messageText == "help" OR "menu" OR "เมนู") {  
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"Can i help u?",
+          "buttons"=>[
+            [
+              "type"=>"postback",
+              "title"=>"Contact Information",
+              "payload"=>"Contact Information"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Application Feedback",
+              "payload"=> "Application Feedback"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Search on NOSTRA Map",
+              "payload"=> "Search"
+            ]
+          ]
+        ]
+    ]];
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+    ];
+  }
 
-  if($messageText == "ข้อมูลติดต่อ (Contact Information)") {
+//   if($messageText == "ข้อมูลติดต่อ (Contact Information)") {
+//       $answer = "NOSTRA Hotline Service
+// Tel : (66)2 266 9940
+// E-mail : nostrahotline@cdg.co.th";
+//       //send message to facebook bot
+//       $response = [
+//         'recipient' => [ 'id' => $senderId ],
+//         'message' => [ 'text' => $answer ]
+//       ];
+//   }
+
+  if(substr_count($messageText, 'Contact')) {
       $answer = "NOSTRA Hotline Service
 Tel : (66)2 266 9940
 E-mail : nostrahotline@cdg.co.th";
