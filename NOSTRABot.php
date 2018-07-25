@@ -139,7 +139,7 @@ E-mail : nostrahotline@cdg.co.th";
       ];
   }
 
-  if(substr_count($messageText, 'แสดงคำติชม')) {
+  if(substr_count($messageText, 'แสดงคำติชมแอปพลิเคชัน')) {
       $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
       //send message to facebook bot
       $response = [
