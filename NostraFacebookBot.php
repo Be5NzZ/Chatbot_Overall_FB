@@ -45,13 +45,39 @@
           ]
         ]
     ]];
+    
+  if(substr_count($messageText, 'สอบถาม')) {
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"Can i help u?",
+          "buttons"=>[
+            [
+              "type"=>"postback",
+              "title"=>"Contact Information",
+              "payload"=>"Contact Information"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Application Feedback",
+              "payload"=> "Application Feedback"
+            ],
+            [
+              "type"=>"web_url",
+              "url"=>"https://map.nostramap.com/",
+              "title"=>"Search on NOSTRA Map"
+            ]
+          ]
+        ]
+    ]];
     $response = [
       'recipient' => [ 'id' => $senderId ],
       'message' => $answer
     ];
   }
 
-  if($messageText == "menu") {  
+  if($messageText == "menu" OR "help") {  
     $answer = ["attachment"=>[
         "type"=>"template",
         "payload"=>[
