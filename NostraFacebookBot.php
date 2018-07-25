@@ -20,7 +20,7 @@
   $response = null;
 
   //set Message
-  if($messageText == "hi" OR "สวัสดี") {
+  if($messageText == "hi") {
     $answer = ["attachment"=>[
         "type"=>"template",
         "payload"=>[
@@ -51,7 +51,7 @@
     ];
   }
 
-  if($messageText == "help" OR "menu" OR "เมนู") {  
+  if($messageText == "menu") {  
     $answer = ["attachment"=>[
         "type"=>"template",
         "payload"=>[
@@ -104,8 +104,28 @@ E-mail : nostrahotline@cdg.co.th";
       ];
   }
 
+  if(substr_count($messageText, 'ข้อมูลติดต่อ')) {
+      $answer = "NOSTRA Hotline Service
+Tel : (66)2 266 9940
+E-mail : nostrahotline@cdg.co.th";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }
+
   if(substr_count($messageText, 'Feedback')) {
       $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }
+
+  if(substr_count($messageText, 'Feedback')) {
+      $answer = "แสดงคำติขม";
       //send message to facebook bot
       $response = [
         'recipient' => [ 'id' => $senderId ],
@@ -123,18 +143,18 @@ E-mail : nostrahotline@cdg.co.th";
 //   }
 
   //Picture
-  if($messageText == "vid") {  
-    $answer = ["attachment"=>[
-        "type"=>"video",
-        "payload"=>[
-          "url"=>"https://www.facebook.com/NOSTRAMap/videos/1098390336937977/",
-        ]
-    ]];
-    $response = [
-      'recipient' => [ 'id' => $senderId ],
-      'message' => $answer
-    ];
-  }
+//   if($messageText == "vid") {  
+//     $answer = ["attachment"=>[
+//         "type"=>"video",
+//         "payload"=>[
+//           "url"=>"https://www.facebook.com/NOSTRAMap/videos/1098390336937977/",
+//         ]
+//     ]];
+//     $response = [
+//       'recipient' => [ 'id' => $senderId ],
+//       'message' => $answer
+//     ];
+//   }
 
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
