@@ -128,6 +128,25 @@ E-mail : nostrahotline@cdg.co.th";
       'message' => $answer
     ];
   }
+  if(substr_count($messageText, 'ข้อมูลติดต่อ')) {
+      $answer = "NOSTRA Hotline Service
+Tel : (66)2 266 9940
+E-mail : nostrahotline@cdg.co.th";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }
+
+  if(substr_count($messageText, 'แสดงคำติชม')) {
+      $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
+      //send message to facebook bot
+      $response = [
+        'recipient' => [ 'id' => $senderId ],
+        'message' => [ 'text' => $answer ]
+      ];
+  }
   $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
   curl_setopt($ch, CURLOPT_POST, 1);
   curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($response));
