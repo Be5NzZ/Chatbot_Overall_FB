@@ -77,7 +77,7 @@
 //     ];
 //   }
 
-  if($messageText == "menu" OR "help") {  
+  if($messageText == "menu") {  
     $answer = ["attachment"=>[
         "type"=>"template",
         "payload"=>[
