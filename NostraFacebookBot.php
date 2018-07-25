@@ -124,8 +124,8 @@ E-mail : nostrahotline@cdg.co.th";
       ];
   }
 
-  if(substr_count($messageText, 'Feedback')) {
-      $answer = "แสดงคำติขม";
+  if(substr_count($messageText, 'แสดงคำติขม')) {
+      $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
       //send message to facebook bot
       $response = [
         'recipient' => [ 'id' => $senderId ],
