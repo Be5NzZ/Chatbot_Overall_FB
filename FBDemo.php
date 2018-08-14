@@ -14,6 +14,11 @@ if ($_REQUEST['hub_verify_token'] === $hubVerifyToken) {
 $input = json_decode(file_get_contents('php://input'), true);
 $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
 $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
+$payload = $input['entry'][0]['messaging'][0]['postback']['payload'];
+  
+if (!empty($payload)) {
+  $messageText = $payload;
+}
 $response = null;
 
   if($messageText == "menu") {  
