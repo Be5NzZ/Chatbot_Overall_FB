@@ -178,7 +178,7 @@ if($messageText == "Application Feedback") {
 }
 
 if($messageText == "ขอความช่วยเหลือจากฝ่ายบริการลูกค้า") {
-    $answer = "แจ้งปัญหาหรือสอบถามเพิ่มเติมได้เลยครับ :)";
+    $answer = "สวัสดีครับ มีอะไรให้แอดมินช่วยเหลือบ้างครับ :)";
   $response = [
     'recipient' => [ 'id' => $senderId ],
     'message' => [ 'text' => $answer ]
@@ -186,7 +186,7 @@ if($messageText == "ขอความช่วยเหลือจากฝ่
 }
 
 if($messageText == "Contact Admin") {
-    $answer = "Comment your questions or report problem below. :)";
+    $answer = "Hello! What can i do for you ? :)";
   $response = [
     'recipient' => [ 'id' => $senderId ],
     'message' => [ 'text' => $answer ]
