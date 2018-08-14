@@ -112,14 +112,26 @@ $response = null;
 //set Message
 if($messageText == "hi") {
     $answer = "Hello! What can I do for you?";
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => [ 'text' => $answer ]
+];
 }
 
 if($messageText == "hello") {
     $answer = "Hello! What can I do for you?";
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => [ 'text' => $answer ]
+];
 }
 
 if(substr_count($messageText, 'สวัสดี')) {
     $answer = "สวัสดีครับ ไม่ทราบว่ามีอะไรให้ช่วยครับ? :)";
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => [ 'text' => $answer ]
+];
 }
 
 if($messageText == "ข้อมูลติดต่อ") {
@@ -127,6 +139,10 @@ if($messageText == "ข้อมูลติดต่อ") {
 Tel : (66)2 266 9940
 E-mail : nostrahotline@cdg.co.th
 Website : http://www.nostramap.com/";
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => [ 'text' => $answer ]
+];
 }
 
 if($messageText == "Contact Information") {
@@ -134,29 +150,49 @@ if($messageText == "Contact Information") {
 Tel : (66)2 266 9940
 E-mail : nostrahotline@cdg.co.th
 Website : http://www.nostramap.com/";
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => [ 'text' => $answer ]
+];
 }
 
 if($messageText == "แสดงคำติชมแอปพลิเคชัน") {
     $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => [ 'text' => $answer ]
+];
 }
 
 if($messageText == "Application Feedback") {
     $answer = "Please comment your feedback below :)";
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => [ 'text' => $answer ]
+];
 }
 
 if($messageText == "ขอความช่วยเหลือจากฝ่ายบริการลูกค้า") {
     $answer = "แจ้งปัญหาหรือสอบถามเพิ่มเติมได้เลยครับ :)";
+  $response = [
+    'recipient' => [ 'id' => $senderId ],
+    'message' => [ 'text' => $answer ]
+];
 }
 
 if($messageText == "Contact Admin") {
     $answer = "Comment your questions or report problem below. :)";
-}
-
-//send message to facebook bot
-$response = [
+  $response = [
     'recipient' => [ 'id' => $senderId ],
     'message' => [ 'text' => $answer ]
 ];
+}
+
+//send message to facebook bot
+// $response = [
+//     'recipient' => [ 'id' => $senderId ],
+//     'message' => [ 'text' => $answer ]
+// ];
 
 $ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
 curl_setopt($ch, CURLOPT_POST, 1);
