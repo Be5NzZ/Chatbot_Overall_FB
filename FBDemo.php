@@ -18,13 +18,30 @@ $response = null;
 
 //set Message
 if($messageText == "hi") {
-    $answer = "Hello";
+    $answer = "Hello! What can I do for you?";
+}
+
+if($messageText == "hello") {
+    $answer = "Hello! What can I do for you?";
+}
+
+if(substr_count($messageText, 'สวัสดี')) {
+    $answer = "สวัสดีครับ ไม่ทราบว่ามีอะไรให้ช่วยครับ? :)";
 }
 
 if($messageText == "ข้อมูลติดต่อ") {
     $answer = "NOSTRA Hotline Service
 Tel : (66)2 266 9940
-E-mail : nostrahotline@cdg.co.th";
+E-mail : nostrahotline@cdg.co.th
+Website : http://www.nostramap.com/";
+}
+
+if($messageText == "แสดงคำติชมแอปพลิเคชัน") {
+    $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
+}
+
+if($messageText == "ขอความช่วยเหลือจากฝ่ายบริการลูกค้า") {
+    $answer = "แจ้งปัญหาหรือสอบถามเพิ่มเติมได้เลยครับ :)";
 }
 
 //send message to facebook bot
