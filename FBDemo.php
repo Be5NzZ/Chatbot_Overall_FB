@@ -16,6 +16,99 @@ $senderId = $input['entry'][0]['messaging'][0]['sender']['id'];
 $messageText = $input['entry'][0]['messaging'][0]['message']['text'];
 $response = null;
 
+  if($messageText == "menu") {  
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"Can i help u?",
+          "buttons"=>[
+            [
+              "type"=>"postback",
+              "title"=>"Contact Information",
+              "payload"=>"Contact Information"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Application Feedback",
+              "payload"=> "Application Feedback"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Contact Admin",
+              "payload"=> "Contact Admin"
+            ]
+          ]
+        ]
+    ]];
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+    ];
+  }
+
+  if($messageText == "เมนู") {  
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"มีอะไรให้ช่วยครับ ?",
+          "buttons"=>[
+            [
+              "type"=>"postback",
+              "title"=>"ข้อมูลติดต่อ",
+              "payload"=>"ข้อมูลติดต่อ"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"แสดงคำติชมแอปพลิเคชัน",
+              "payload"=> "แสดงคำติชมแอปพลิเคชัน"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"ขอความช่วยเหลือจากฝ่ายบริการลูกค้า",
+              "payload"=> "ขอความช่วยเหลือจากฝ่ายบริการลูกค้า"
+            ]
+          ]
+        ]
+    ]];
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+    ];
+  }
+
+  if($messageText == "help") {  
+    $answer = ["attachment"=>[
+        "type"=>"template",
+        "payload"=>[
+          "template_type"=>"button",
+          "text"=>"Can i help u?",
+          "buttons"=>[
+            [
+              "type"=>"postback",
+              "title"=>"Contact Information",
+              "payload"=>"Contact Information"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Application Feedback",
+              "payload"=> "Application Feedback"
+            ],
+            [
+              "type"=>"postback",
+              "title"=>"Contact Admin",
+              "payload"=> "Contact Admin"
+            ]
+          ]
+        ]
+    ]];
+    $response = [
+      'recipient' => [ 'id' => $senderId ],
+      'message' => $answer
+    ];
+  }
+
 //set Message
 if($messageText == "hi") {
     $answer = "Hello! What can I do for you?";
@@ -36,12 +129,27 @@ E-mail : nostrahotline@cdg.co.th
 Website : http://www.nostramap.com/";
 }
 
+if($messageText == "Contact Information") {
+    $answer = "NOSTRA Hotline Service
+Tel : (66)2 266 9940
+E-mail : nostrahotline@cdg.co.th
+Website : http://www.nostramap.com/";
+}
+
 if($messageText == "แสดงคำติชมแอปพลิเคชัน") {
     $answer = "ขอบคุณมากครับ รบกวนแสดงความคิดเห็นของท่านได้เลยครับ :)";
 }
 
+if($messageText == "Application Feedback") {
+    $answer = "Please comment your feedback below :)";
+}
+
 if($messageText == "ขอความช่วยเหลือจากฝ่ายบริการลูกค้า") {
     $answer = "แจ้งปัญหาหรือสอบถามเพิ่มเติมได้เลยครับ :)";
+}
+
+if($messageText == "Contact Admin") {
+    $answer = "Comment your questions or report problem below. :)";
 }
 
 //send message to facebook bot
