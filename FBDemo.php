@@ -21,6 +21,12 @@ if($messageText == "hi") {
     $answer = "Hello";
 }
 
+if($messageText == "ข้อมูลติดต่อ") {
+    $answer = "NOSTRA Hotline Service
+Tel : (66)2 266 9940
+E-mail : nostrahotline@cdg.co.th";
+}
+
 //send message to facebook bot
 $response = [
     'recipient' => [ 'id' => $senderId ],
