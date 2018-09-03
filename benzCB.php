@@ -1,7 +1,7 @@
 <?php
 // parameters
 $hubVerifyToken = 'tk_benztest';
-$accessToken = "EAAeaMmUlJQ0BALoUB5atEAja4aX7CzdZCbhmhEnUxVcyCR57nJZCZBkr1yNpGoPZApfc1ZCq4sV5wSKEBVARvoZAtZBLs0Fppm4K9Q7G97RbvMfVUyLxfK1RDl8eXZAu51xbX0O1YQ8xmrP5ZAo2zH0cRCcZAZANMULZBeXUsZC8kZCX7rZCgZDZD";
+$accessToken = "EAAeaMmUlJQ0BADgDkUU2Aj5wzlnGCyl2jqPy1q5vSTrGavypUZCwUspvVDjwp3OowEvoZAboMuoZAcKUondJNwD9b8KYWTt1fB2fSBrPfKMjRCZBMmuuhdgditcQUOQzKG2IHVbrR0zGDYnLRbwOJPb1gDWDYEayEWX1Cn6BEAZDZD";
 // check token at setup
 if ($_REQUEST['hub_verify_token'] === $hubVerifyToken) {
   echo $_REQUEST['hub_challenge'];
