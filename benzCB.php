@@ -1,7 +1,7 @@
 <?php
 // parameters
-$hubVerifyToken = 'tk_nostra';
-$accessToken = "EAAfPL4euke0BAPPNLSnA3jGEooKa8gZBqOG7E0pZB62ZA3ZBRcRVf4ZCZCVonZCHZBdu53QS413iy2cPDle6l8zrPPjDxcKW7cj9Mkmb7XDfQ8bF7Cb9AGQk8FwwhqAILZC6xue5JaBjuHiiWPv26EwUZCWO2TqJdjuBzdTozDGmqxHwZDZD";
+$hubVerifyToken = 'tk_benztest';
+$accessToken = "EAAeaMmUlJQ0BALoUB5atEAja4aX7CzdZCbhmhEnUxVcyCR57nJZCZBkr1yNpGoPZApfc1ZCq4sV5wSKEBVARvoZAtZBLs0Fppm4K9Q7G97RbvMfVUyLxfK1RDl8eXZAu51xbX0O1YQ8xmrP5ZAo2zH0cRCcZAZANMULZBeXUsZC8kZCX7rZCgZDZD";
 // check token at setup
 if ($_REQUEST['hub_verify_token'] === $hubVerifyToken) {
   echo $_REQUEST['hub_challenge'];
@@ -47,27 +47,27 @@ $response = null;
       'message' => $answer
     ];
   }
-  if($messageText == "àÁ¹Ù") {  
+  if($messageText == "å—”å®˜") {  
     $answer = ["attachment"=>[
         "type"=>"template",
         "payload"=>[
           "template_type"=>"button",
-          "text"=>"ÁÕÍÐäÃãËéªèÇÂ¤ÃÑº ?",
+          "text"=>"ç³æ‰˜æ¶¿é—¼æ¥ æž¨é™‡é†šï¿½ ?",
           "buttons"=>[
             [
               "type"=>"postback",
-              "title"=>"¢éÍÁÙÅµÔ´µèÍ",
-              "payload"=>"¢éÍÁÙÅµÔ´µèÍ"
+              "title"=>"ãˆ¤åœŸå€¥ç¿Ÿå¹æŸ°",
+              "payload"=>"ãˆ¤åœŸå€¥ç¿Ÿå¹æŸ°"
             ],
             [
               "type"=>"postback",
-              "title"=>"áÊ´§¤ÓµÔªÁáÍ»¾ÅÔà¤ªÑ¹",
-              "payload"=> "áÊ´§¤ÓµÔªÁáÍ»¾ÅÔà¤ªÑ¹"
+              "title"=>"å´¾æ£ã³ç¿Ÿî€ åµ¬ç—ªæ—å•¶î€°ï¿½",
+              "payload"=> "å´¾æ£ã³ç¿Ÿî€ åµ¬ç—ªæ—å•¶î€°ï¿½"
             ],
             [
               "type"=>"postback",
-              "title"=>"¢Í¤ÇÒÁªèÇÂàËÅ×Í¨Ò¡½èÒÂºÃÔ¡ÒÃÅÙ¡¤éÒ",
-              "payload"=> "¢Í¤ÇÒÁªèÇÂàËÅ×Í¨Ò¡½èÒÂºÃÔ¡ÒÃÅÙ¡¤éÒ"
+              "title"=>"â‘¼ã§ä¼Šî‡é”¹å—¨æŠ›é€šæ‘‡å€Ÿè¡£å¥½æµ´é¢åˆ¨Â·æ©",
+              "payload"=> "â‘¼ã§ä¼Šî‡é”¹å—¨æŠ›é€šæ‘‡å€Ÿè¡£å¥½æµ´é¢åˆ¨Â·æ©"
             ]
           ]
         ]
@@ -122,14 +122,14 @@ if($messageText == "hello") {
     'message' => [ 'text' => $answer ]
 ];
 }
-if(substr_count($messageText, 'ÊÇÑÊ´Õ')) {
-    $answer = "ÊÇÑÊ´Õ¤ÃÑº äÁè·ÃÒºÇèÒÁÕÍÐäÃãËéªèÇÂ¤ÃÑº? :)";
+if(substr_count($messageText, 'æ˜¯å’½å‡‘')) {
+    $answer = "æ˜¯å’½å‡‘ã£æŠ¼ æ·žç’ºé¡å‘µæž°ç³æ‰˜æ¶¿é—¼æ¥ æž¨é™‡é†šï¿½? :)";
   $response = [
     'recipient' => [ 'id' => $senderId ],
     'message' => [ 'text' => $answer ]
 ];
 }
-if($messageText == "¢éÍÁÙÅµÔ´µèÍ") {
+if($messageText == "ãˆ¤åœŸå€¥ç¿Ÿå¹æŸ°") {
     $answer = "NOSTRA Hotline Service
 Tel : (66)2 266 9940
 E-mail : nostrahotline@cdg.co.th
@@ -149,8 +149,8 @@ Website : http://www.nostramap.com/";
     'message' => [ 'text' => $answer ]
 ];
 }
-if($messageText == "áÊ´§¤ÓµÔªÁáÍ»¾ÅÔà¤ªÑ¹") {
-    $answer = "¢Íº¤Ø³ÁÒ¡¤ÃÑº Ãº¡Ç¹áÊ´§¤ÇÒÁ¤Ô´àËç¹¢Í§·èÒ¹ä´éàÅÂ¤ÃÑº :)";
+if($messageText == "å´¾æ£ã³ç¿Ÿî€ åµ¬ç—ªæ—å•¶î€°ï¿½") {
+    $answer = "â‘¼æ°¦çˆ»çƒˆÂ·é†šï¿½ ç…¤âˆè´¯èš€Ð“ä¸”æ²¥æºå—¨ç»»â‘¼Ð¥æž°é€›æ’®å—¯é™‡é†šï¿½ :)";
   $response = [
     'recipient' => [ 'id' => $senderId ],
     'message' => [ 'text' => $answer ]
@@ -163,8 +163,8 @@ if($messageText == "Application Feedback") {
     'message' => [ 'text' => $answer ]
 ];
 }
-if($messageText == "¢Í¤ÇÒÁªèÇÂàËÅ×Í¨Ò¡½èÒÂºÃÔ¡ÒÃÅÙ¡¤éÒ") {
-    $answer = "ÊÇÑÊ´Õ¤ÃÑº ÁÕÍÐäÃãËéáÍ´ÁÔ¹ªèÇÂàËÅ×ÍºéÒ§¤ÃÑº :)";
+if($messageText == "â‘¼ã§ä¼Šî‡é”¹å—¨æŠ›é€šæ‘‡å€Ÿè¡£å¥½æµ´é¢åˆ¨Â·æ©") {
+    $answer = "æ˜¯å’½å‡‘ã£æŠ¼ ç³æ‰˜æ¶¿é—¼ç’ç—›çŒŽèº¬æž¨é”£ä¼ºæ·„æ´ªå’¬ã£æŠ¼ :)";
   $response = [
     'recipient' => [ 'id' => $senderId ],
     'message' => [ 'text' => $answer ]
