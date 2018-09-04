@@ -123,7 +123,7 @@ function sendTextMessage(sender, text) {
 function sendTextApiMessage(sender, text) {
     let messageData = { text:text }
     request({
-        url: 'http://localhost:4673/WebService1.asmx?op=GetMessage',
+        url: 'http://localhost:4673/WebService1.asmx/GetMessage',
         //qs: {access_token:token},
         method: 'POST',
         json: {
