@@ -1,7 +1,4 @@
 'use strict'
-
-//const token = 'this_is_my_token'
-//const vtoken = 'EAAIXglvhlxUBAPZA8tKrxsp4ZBA872hyDQ6FQ9oTQUmZA6yklXrSVAaInDZBeKS2qC19yPaanqHyUbdW40jd5ZA4EZBvVTiMXW88fFg5JuCTR8HuVeEaATk9HVrHgGAAx8PZAqPhgZAQnk9wDCRYJfzoqN5JFsZCg2HmfJb8ZAy5X1JX3cAkJzCKoUMDJ9CSoWYjEZD'
 const vtoken = 'tk_benztest'
 const token = 'EAAeaMmUlJQ0BAD55ZArtnWpfE8ZAMpmLLvLNeCbdjqLm28xzmLE4y7XXhmvh5zvSRbQATtiS9MaPNIQqJap9xeZBhOqvqSkupGZBMXlWqXV1XKuyW2y2DrZCjksWUl8BzZBAHvF9H0XcZAbdIxysVECyhQfwrdxdnLXZCLwfvQtInwZDZD'
 
