@@ -1,6 +1,6 @@
 <?php
-$access_token = "<ACCESS TOKEN>";
-$verify_token = "yellow_duck";
+$access_token = "EAAeaMmUlJQ0BAD55ZArtnWpfE8ZAMpmLLvLNeCbdjqLm28xzmLE4y7XXhmvh5zvSRbQATtiS9MaPNIQqJap9xeZBhOqvqSkupGZBMXlWqXV1XKuyW2y2DrZCjksWUl8BzZBAHvF9H0XcZAbdIxysVECyhQfwrdxdnLXZCLwfvQtInwZDZD";
+$verify_token = "btoken";
 $hub_verify_token = null;
 if(isset($_REQUEST['hub_challenge'])) {
  $challenge = $_REQUEST['hub_challenge'];
